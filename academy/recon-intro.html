@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academy: Intro to Reconnaissance | AFTeen SecLabs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white min-h-screen flex flex-col items-center p-6">
+
+  <div class="max-w-4xl w-full">
+
+    <!-- Back + Title -->
+    <div class="flex items-center mb-8">
+      <a href="/" class="text-cyan-400 hover:text-cyan-300 flex items-center">
+        ← Back to Dashboard
+      </a>
+      <h1 class="text-4xl font-bold mx-auto text-cyan-400">Academy Module</h1>
+    </div>
+
+    <!-- Lesson Content -->
+    <div class="bg-gray-900 rounded-2xl p-8 border border-cyan-900/30">
+
+      <h2 class="text-3xl font-bold mb-6 text-center">Introduction to Reconnaissance & OSINT</h2>
+
+      <div class="prose prose-invert max-w-none space-y-6">
+
+        <p class="text-lg">
+          Before any attack, smart hackers do <strong>reconnaissance</strong> — they gather information about the target without touching anything.
+        </p>
+
+        <p class="text-lg">
+          This is called <strong>OSINT</strong> (Open-Source Intelligence) — using publicly available data from the internet.
+        </p>
+
+        <h3 class="text-2xl font-semibold mt-8">Why Recon Matters</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Finds weak points (emails, employees, subdomains, tech stack)</li>
+          <li>Helps plan phishing or other attacks</li>
+          <li>Ethical hackers use it to find vulnerabilities before criminals do</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold mt-8">Basic OSINT Techniques (You’ll Use Today)</h3>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li><strong>Google Dorks</strong> — special searches like: <code>site:novamobile.africa filetype:pdf</code></li>
+          <li><strong>Social Media Search</strong> — Look for employees on LinkedIn, Twitter/X, Facebook</li>
+          <li><strong>WHOIS & DNS Lookup</strong> — Who owns the domain? (whois.com)</li>
+          <li><strong>Company Documents</strong> — PDFs often leak names, emails, software versions</li>
+          <li><strong>Subdomain Tools</strong> — crt.sh, dnsdumpster.com (free)</li>
+        </ol>
+
+        <h3 class="text-2xl font-semibold mt-8">Your First Mission</h3>
+        <p class="text-lg">
+          Investigate <strong>NovaMobile</strong>, a fictional African smartphone startup.  
+          Find 5 pieces of public information.  
+          Each correct answer = 1 flag + 20 points.
+        </p>
+
+        <div class="text-center mt-10">
+          <a href="/labs/recon-mission-1.html" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-4 px-12 rounded-full text-xl transition">
+            Start Recon Mission 1 →
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-16 text-center text-gray-500 text-sm">
+      © 2026 AFTeen SecLabs – Forging the Next Generation of African Cyber Defenders
+    </footer>
+
+  </div>
+
+</body>
+</html>
