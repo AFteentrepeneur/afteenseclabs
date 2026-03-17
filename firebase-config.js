@@ -7,10 +7,3 @@ window.firebaseConfig = {
   messagingSenderId: "45301896148",
   appId: "1:45301896148:web:bff416b9ea807a9440bc41"
 };
-
-// Firebase core setup
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
