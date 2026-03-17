@@ -24,66 +24,95 @@
     <!-- Welcome -->
     <div class="mb-12">
       <h2 class="text-5xl font-bold">Welcome back, <span id="user-name" class="text-cyan-400">Cadet</span>!</h2>
-      <p class="text-xl text-gray-400 mt-3">Choose your path and begin forging your future as a cyber defender.</p>
+      <p class="text-xl text-gray-400 mt-3">You're on the path to becoming a certified cyber defender.</p>
+    </div>
+
+    <!-- Certification Progress -->
+    <div class="bg-gray-900 rounded-3xl p-8 mb-12 border border-amber-500/30">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-2xl font-semibold">Your Certification Journey</h3>
+        <div class="text-amber-400 font-medium">CSCC • Cyber Cadet</div>
+      </div>
+      
+      <div class="grid grid-cols-4 gap-4">
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto bg-cyan-500/10 rounded-2xl flex items-center justify-center text-3xl mb-3 border border-cyan-500/30">1</div>
+          <p class="text-xs text-cyan-400 font-medium">CSCC</p>
+          <p class="text-[10px] text-gray-500">Cyber Cadet</p>
+        </div>
+        <div class="text-center opacity-40">
+          <div class="w-16 h-16 mx-auto bg-gray-700 rounded-2xl flex items-center justify-center text-3xl mb-3">2</div>
+          <p class="text-xs text-gray-400">CSSO</p>
+          <p class="text-[10px] text-gray-500">Security Operator</p>
+        </div>
+        <div class="text-center opacity-40">
+          <div class="w-16 h-16 mx-auto bg-gray-700 rounded-2xl flex items-center justify-center text-3xl mb-3">3</div>
+          <p class="text-xs text-gray-400">CSCS</p>
+          <p class="text-[10px] text-gray-500">Cyber Specialist</p>
+        </div>
+        <div class="text-center opacity-40">
+          <div class="w-16 h-16 mx-auto bg-gray-700 rounded-2xl flex items-center justify-center text-3xl mb-3">4</div>
+          <p class="text-xs text-gray-400">CSCE</p>
+          <p class="text-[10px] text-gray-500">Cyber Elite</p>
+        </div>
+      </div>
+      
+      <div class="mt-6 h-2 bg-gray-800 rounded-full overflow-hidden">
+        <div class="h-2 bg-gradient-to-r from-cyan-400 to-amber-400 w-1/4"></div>
+      </div>
+      <p class="text-center text-xs text-gray-500 mt-2">25% Complete • Next: CSSO – Security Operator</p>
     </div>
 
     <!-- Path Selection -->
+    <h3 class="text-2xl font-semibold mb-6">Choose Your Training Path</h3>
     <div class="grid md:grid-cols-3 gap-8">
 
-      <!-- Red Team Path -->
+      <!-- Red Team -->
       <a href="/red-path.html" class="group">
-        <div class="bg-gray-900 border border-red-600/30 hover:border-red-500 rounded-3xl p-8 transition-all">
+        <div class="bg-gray-900 border-2 border-red-600/30 hover:border-red-500 rounded-3xl p-8 transition-all h-full">
           <div class="text-6xl mb-6">🔴</div>
-          <h3 class="text-3xl font-bold mb-2">Red Team Path</h3>
-          <p class="text-red-400 mb-6">Offensive Security • Ethical Hacking</p>
-          <p class="text-gray-400 text-sm">Learn to think and attack like a professional hacker.</p>
-          <div class="mt-8 text-cyan-400 font-medium group-hover:underline">Enter Red Path →</div>
+          <h4 class="text-3xl font-bold mb-3">Red Team</h4>
+          <p class="text-red-400 mb-6">Offensive • Ethical Hacking</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Master reconnaissance, exploitation, credential attacks, and post-exploitation.</p>
+          <div class="mt-10 text-cyan-400 font-medium group-hover:underline">Enter Red Path →</div>
         </div>
       </a>
 
-      <!-- Blue Team Path -->
+      <!-- Blue Team -->
       <a href="/blue-path.html" class="group">
-        <div class="bg-gray-900 border border-blue-600/30 hover:border-blue-500 rounded-3xl p-8 transition-all">
+        <div class="bg-gray-900 border-2 border-blue-600/30 hover:border-blue-500 rounded-3xl p-8 transition-all h-full">
           <div class="text-6xl mb-6">🔵</div>
-          <h3 class="text-3xl font-bold mb-2">Blue Team Path</h3>
-          <p class="text-blue-400 mb-6">Defensive Security • SOC Operations</p>
-          <p class="text-gray-400 text-sm">Learn to detect, monitor, and defend systems.</p>
-          <div class="mt-8 text-cyan-400 font-medium group-hover:underline">Enter Blue Path →</div>
+          <h4 class="text-3xl font-bold mb-3">Blue Team</h4>
+          <p class="text-blue-400 mb-6">Defensive • SOC Operations</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Learn security monitoring, threat detection, and incident response.</p>
+          <div class="mt-10 text-cyan-400 font-medium group-hover:underline">Enter Blue Path →</div>
         </div>
       </a>
 
-      <!-- Purple Team Path -->
+      <!-- Purple Team -->
       <a href="/purple-path.html" class="group">
-        <div class="bg-gray-900 border border-purple-600/30 hover:border-purple-500 rounded-3xl p-8 transition-all">
+        <div class="bg-gray-900 border-2 border-purple-600/30 hover:border-purple-500 rounded-3xl p-8 transition-all h-full">
           <div class="text-6xl mb-6">🟣</div>
-          <h3 class="text-3xl font-bold mb-2">Purple Team Path</h3>
+          <h4 class="text-3xl font-bold mb-3">Purple Team</h4>
           <p class="text-purple-400 mb-6">Combined Offense + Defense</p>
-          <p class="text-gray-400 text-sm">Learn to attack and defend simultaneously.</p>
-          <div class="mt-8 text-cyan-400 font-medium group-hover:underline">Enter Purple Path →</div>
+          <p class="text-gray-400 text-sm leading-relaxed">Attack and defend simultaneously. Optimize real security.</p>
+          <div class="mt-10 text-cyan-400 font-medium group-hover:underline">Enter Purple Path →</div>
         </div>
       </a>
 
     </div>
 
-    <!-- Quick Access -->
+    <!-- Quick Labs -->
     <div class="mt-16 bg-gray-900 rounded-3xl p-8">
-      <h3 class="text-2xl font-semibold mb-6">Quick Access</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <a href="/labs/recon-mission-1.html" class="bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl text-center transition">
-          <p class="text-cyan-400 text-sm">Red Team</p>
-          <p class="font-medium">Recon Mission 1</p>
+      <h3 class="text-2xl font-semibold mb-6">Quick Labs</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/labs/recon-mission-1.html" class="bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl transition">
+          <span class="text-red-400 text-xs">RED TEAM • MODULE 1</span>
+          <h4 class="font-semibold mt-2">Recon Mission 1: OSINT</h4>
         </a>
-        <a href="/blue-path.html" class="bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl text-center transition">
-          <p class="text-blue-400 text-sm">Blue Team</p>
-          <p class="font-medium">Security Monitoring</p>
-        </a>
-        <a href="/cyberarena.html" class="bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl text-center transition">
-          <p class="text-amber-400 text-sm">CyberArena</p>
-          <p class="font-medium">Competitions</p>
-        </a>
-        <a href="/cyberrange.html" class="bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl text-center transition">
-          <p class="text-purple-400 text-sm">CyberRange</p>
-          <p class="font-medium">Full Simulations</p>
+        <a href="/labs/recon-mission-2.html" class="bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl transition">
+          <span class="text-red-400 text-xs">RED TEAM • MODULE 1</span>
+          <h4 class="font-semibold mt-2">Recon Mission 2: Subdomains</h4>
         </a>
       </div>
     </div>
