@@ -54,7 +54,9 @@
   </div>
 
   <script>
+     if (!firebase.apps.length) {
     firebase.initializeApp(window.firebaseConfig);
+  }
     const auth = firebase.auth();
 
     // Email/Password Signup
