@@ -5,98 +5,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Recon Mission 1 – OSINT Investigation | AFTeen SecLabs</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Confetti.js for success animation -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </head>
-<body class="bg-gray-950 text-white min-h-screen flex items-center justify-center p-6 font-sans">
+<body class="bg-gray-950 text-white min-h-screen p-6">
 
-  <div class="max-w-4xl w-full bg-gray-900/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-cyan-900/40">
+  <div class="max-w-4xl mx-auto">
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <div class="flex flex-col sm:flex-row items-center justify-between mb-10 gap-4">
-      <a href="/academy/recon-intro.html" class="text-cyan-400 hover:text-cyan-300 flex items-center font-medium text-lg transition">
+      <a href="/academy/recon-intro.html" class="text-cyan-400 hover:text-cyan-300 flex items-center font-medium">
         ← Back to Academy Lesson
       </a>
-      
-      <h1 class="text-4xl md:text-5xl font-bold text-cyan-400 text-center">Recon Mission 1</h1>
-      
-      <a href="/" class="text-gray-400 hover:text-gray-300 flex items-center font-medium text-lg transition">
+      <h1 class="text-4xl font-bold text-cyan-400">Recon Mission 1</h1>
+      <a href="/dashboard.html" class="text-gray-400 hover:text-gray-300 flex items-center font-medium">
         Dashboard →
       </a>
     </div>
 
-    <!-- Mission Brief Card -->
-    <div class="bg-gray-800/70 p-6 rounded-xl mb-10 border border-gray-700">
-      <h2 class="text-3xl font-semibold mb-5 text-cyan-300">Mission: Investigate NovaMobile</h2>
-      <p class="text-gray-200 mb-4 leading-relaxed">
-        NovaMobile is a fast-growing African smartphone startup. Intelligence suggests attackers are preparing a phishing campaign against their staff.  
-        As a SecLabs cadet, your task is to perform open-source intelligence (OSINT) gathering using only public sources.
-      </p>
-      <p class="text-gray-400 text-sm italic">
-        Find 5 key pieces of information. Submit each flag below. Correct answers earn points and advance your dossier.
+    <!-- Mission Header -->
+    <div class="bg-gradient-to-r from-cyan-900 to-blue-900 rounded-3xl p-8 mb-10 text-center">
+      <h2 class="text-4xl font-bold mb-4">Mission: Investigate NovaMobile</h2>
+      <p class="text-xl text-gray-200 max-w-2xl mx-auto">
+        A growing African smartphone startup is being targeted by GhostJack. 
+        Your job is to gather open-source intelligence (OSINT) before they strike.
       </p>
     </div>
 
-    <!-- Progress Bar -->
+    <!-- Learning Objectives -->
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-gray-900 p-6 rounded-2xl border border-cyan-900/30">
+        <div class="text-cyan-400 text-2xl mb-3">🌐</div>
+        <h4 class="font-semibold">Domain Intelligence</h4>
+        <p class="text-gray-400 text-sm">Find domains and email patterns</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-2xl border border-cyan-900/30">
+        <div class="text-cyan-400 text-2xl mb-3">👥</div>
+        <h4 class="font-semibold">People Intelligence</h4>
+        <p class="text-gray-400 text-sm">Identify key employees</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-2xl border border-cyan-900/30">
+        <div class="text-cyan-400 text-2xl mb-3">📄</div>
+        <h4 class="font-semibold">Document Analysis</h4>
+        <p class="text-gray-400 text-sm">Extract hidden metadata</p>
+      </div>
+    </div>
+
+    <!-- Progress -->
     <div class="mb-10">
-      <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
-        <div id="progress-bar" class="bg-gradient-to-r from-cyan-500 to-blue-600 h-4 rounded-full w-0 transition-all duration-700 ease-out"></div>
+      <div class="flex justify-between text-sm mb-2">
+        <span class="text-gray-400">Mission Progress</span>
+        <span id="progress-text" class="font-medium">0/5 flags • 0 points</span>
       </div>
-      <p id="progress-text" class="text-right text-sm text-gray-400 mt-2 font-medium">0/5 flags found • 0 points</p>
-    </div>
-
-    <!-- Flag Submission Cards -->
-    <div class="grid gap-8 md:grid-cols-2">
-      <!-- Flag 1 -->
-      <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-cyan-700/50 transition">
-        <label class="block text-lg font-medium mb-3 text-gray-200">Flag 1: CEO full name</label>
-        <input id="flag1" type="text" class="w-full p-4 bg-gray-900 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/30 text-white placeholder-gray-500" placeholder="e.g., Aisha Okoro">
-        <button onclick="checkFlag(1)" class="mt-4 w-full bg-cyan-600 hover:bg-cyan-700 text-black font-semibold py-3 px-6 rounded-lg transition">Submit Flag 1</button>
-      </div>
-
-      <!-- Flag 2 -->
-      <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-cyan-700/50 transition">
-        <label class="block text-lg font-medium mb-3 text-gray-200">Flag 2: Common employee email format</label>
-        <input id="flag2" type="text" class="w-full p-4 bg-gray-900 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/30 text-white placeholder-gray-500" placeholder="e.g., first.last@novamobile.africa">
-        <button onclick="checkFlag(2)" class="mt-4 w-full bg-cyan-600 hover:bg-cyan-700 text-black font-semibold py-3 px-6 rounded-lg transition">Submit Flag 2</button>
-      </div>
-
-      <!-- Flag 3 -->
-      <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-cyan-700/50 transition">
-        <label class="block text-lg font-medium mb-3 text-gray-200">Flag 3: Website technology stack hint</label>
-        <input id="flag3" type="text" class="w-full p-4 bg-gray-900 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/30 text-white placeholder-gray-500" placeholder="e.g., Built with React and hosted on AWS">
-        <button onclick="checkFlag(3)" class="mt-4 w-full bg-cyan-600 hover:bg-cyan-700 text-black font-semibold py-3 px-6 rounded-lg transition">Submit Flag 3</button>
-      </div>
-
-      <!-- Flag 4 -->
-      <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-cyan-700/50 transition">
-        <label class="block text-lg font-medium mb-3 text-gray-200">Flag 4: Name of one IT/DevOps employee</label>
-        <input id="flag4" type="text" class="w-full p-4 bg-gray-900 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/30 text-white placeholder-gray-500" placeholder="e.g., Chidi Nwosu">
-        <button onclick="checkFlag(4)" class="mt-4 w-full bg-cyan-600 hover:bg-cyan-700 text-black font-semibold py-3 px-6 rounded-lg transition">Submit Flag 4</button>
-      </div>
-
-      <!-- Flag 5 -->
-      <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-cyan-700/50 transition md:col-span-2">
-        <label class="block text-lg font-medium mb-3 text-gray-200">Flag 5: Public document with company metadata (title or link)</label>
-        <input id="flag5" type="text" class="w-full p-4 bg-gray-900 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/30 text-white placeholder-gray-500" placeholder="e.g., NovaMobile-Annual-Report.pdf">
-        <button onclick="checkFlag(5)" class="mt-4 w-full bg-cyan-600 hover:bg-cyan-700 text-black font-semibold py-3 px-6 rounded-lg transition">Submit Flag 5</button>
+      <div class="w-full bg-gray-800 rounded-full h-3">
+        <div id="progress-bar" class="bg-cyan-500 h-3 rounded-full w-0 transition-all duration-500"></div>
       </div>
     </div>
 
-    <!-- Success Screen (hidden by default) -->
+    <!-- Flag Inputs -->
+    <div class="space-y-8">
+      <div class="bg-gray-900 p-6 rounded-2xl border border-gray-700">
+        <label class="block text-lg font-medium mb-3">Flag 1: CEO Full Name</label>
+        <input id="flag1" type="text" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-xl focus:outline-none focus:border-cyan-500 text-white" placeholder="e.g. Aisha Okoro">
+        <button onclick="checkFlag(1)" class="mt-4 w-full bg-cyan-600 hover:bg-cyan-700 py-3 rounded-xl font-semibold">Submit Flag 1</button>
+      </div>
+
+      <div class="bg-gray-900 p-6 rounded-2xl border border-gray-700">
+        <label class="block text-lg font-medium mb-3">Flag 2: Employee Email Format</label>
+        <input id="flag2" type="text" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-xl focus:outline-none focus:border-cyan-500 text-white" placeholder="e.g. first.last@novamobile.africa">
+        <button onclick="checkFlag(2)" class="mt-4 w-full bg-cyan-600 hover:bg-cyan-700 py-3 rounded-xl font-semibold">Submit Flag 2</button>
+      </div>
+
+      <div class="bg-gray-900 p-6 rounded-2xl border border-gray-700">
+        <label class="block text-lg font-medium mb-3">Flag 3: Website Technology Stack</label>
+        <input id="flag3" type="text" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-xl focus:outline-none focus:border-cyan-500 text-white" placeholder="e.g. React and AWS">
+        <button onclick="checkFlag(3)" class="mt-4 w-full bg-cyan-600 hover:bg-cyan-700 py-3 rounded-xl font-semibold">Submit Flag 3</button>
+      </div>
+
+      <div class="bg-gray-900 p-6 rounded-2xl border border-gray-700">
+        <label class="block text-lg font-medium mb-3">Flag 4: IT/DevOps Employee Name</label>
+        <input id="flag4" type="text" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-xl focus:outline-none focus:border-cyan-500 text-white" placeholder="e.g. Chidi Nwosu">
+        <button onclick="checkFlag(4)" class="mt-4 w-full bg-cyan-600 hover:bg-cyan-700 py-3 rounded-xl font-semibold">Submit Flag 4</button>
+      </div>
+
+      <div class="bg-gray-900 p-6 rounded-2xl border border-gray-700">
+        <label class="block text-lg font-medium mb-3">Flag 5: Public Document Title</label>
+        <input id="flag5" type="text" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-xl focus:outline-none focus:border-cyan-500 text-white" placeholder="e.g. NovaMobile-Annual-Report.pdf">
+        <button onclick="checkFlag(5)" class="mt-4 w-full bg-cyan-600 hover:bg-cyan-700 py-3 rounded-xl font-semibold">Submit Flag 5</button>
+      </div>
+    </div>
+
+    <!-- Success Screen -->
     <div id="success-screen" class="hidden text-center mt-16">
-      <div class="text-6xl mb-6">🎯</div>
-      <h2 class="text-5xl font-bold text-cyan-400 mb-6">Dossier Complete!</h2>
-      <p class="text-2xl text-gray-300 mb-8">Outstanding work, Cadet! You've built a solid OSINT profile on NovaMobile.</p>
-      <p id="points-earned" class="text-3xl font-semibold mb-10">
-        Points earned: <span class="text-cyan-400">0</span>
-      </p>
+      <div class="text-7xl mb-6">🎉</div>
+      <h2 class="text-5xl font-bold text-cyan-400 mb-4">Mission Accomplished!</h2>
+      <p class="text-2xl text-gray-300 mb-8">You've successfully mapped NovaMobile's digital footprint.</p>
+      <p id="points-earned" class="text-4xl font-bold text-cyan-400 mb-10">0 points earned</p>
+      
       <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="/academy/recon-intro.html" class="inline-block bg-gray-700 hover:bg-gray-800 text-white font-bold py-4 px-10 rounded-full text-xl transition border border-gray-600">
-          ← Back to Academy Lesson
+        <a href="/academy/recon-intro.html" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-5 px-12 rounded-full text-xl transition">
+          ← Back to Lesson
         </a>
-        <a href="dashboard.html" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-4 px-10 rounded-full text-xl transition">
-          Back to Dashboard →
+        <a href="/dashboard.html" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-5 px-12 rounded-full text-xl transition">
+          Go to Dashboard →
         </a>
       </div>
     </div>
@@ -104,87 +114,65 @@
   </div>
 
   <script>
-    // Correct answers (lowercase, partial match for forgiveness)
     const correctFlags = {
-      1: "aisha okoro",                     // CEO name
-      2: "first.last@novamobile.africa",    // email format
-      3: "react aws",                       // tech stack hint
-      4: "chidi nwosu",                     // IT employee
-      5: "annual-report.pdf"                // document example
+      1: "aisha okoro",
+      2: "first.last@novamobile.africa",
+      3: "react aws",
+      4: "chidi nwosu",
+      5: "annual-report.pdf"
     };
 
-    // Load saved progress
     let foundFlags = JSON.parse(localStorage.getItem('recon1_foundFlags')) || [];
     let points = foundFlags.length * 20;
 
-    // Update UI on page load
-    window.onload = function() {
+    window.onload = () => {
       updateProgress();
-      if (foundFlags.length === 5) {
-        showSuccess();
-      }
+      if (foundFlags.length === 5) showSuccess();
     };
 
     function checkFlag(num) {
       const input = document.getElementById(`flag${num}`);
       const value = input.value.trim().toLowerCase();
 
-      // Check if already found (prevent double points)
       if (foundFlags.includes(num)) {
-        alert("You've already submitted this flag correctly!");
+        alert("You've already solved this flag!");
         return;
       }
 
-      // Partial match (lenient)
       if (value.includes(correctFlags[num])) {
         foundFlags.push(num);
         localStorage.setItem('recon1_foundFlags', JSON.stringify(foundFlags));
         points += 20;
 
-        // Confetti burst
-        confetti({
-          particleCount: 80,
-          spread: 60,
-          origin: { y: 0.6 }
-        });
+        confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 } });
+        alert(`✅ Flag ${num} correct! +20 points`);
 
-        alert(`Flag ${num} correct! +20 points`);
         updateProgress();
 
         if (foundFlags.length === 5) {
           showSuccess();
         }
       } else {
-        alert("Not quite — try again. Remember: use public sources like Google, LinkedIn, WHOIS, etc.");
+        alert("❌ Not quite. Try public sources like Google, LinkedIn, or WHOIS.");
       }
     }
 
     function updateProgress() {
       const progress = (foundFlags.length / 5) * 100;
       document.getElementById('progress-bar').style.width = progress + '%';
-      document.getElementById('progress-text').textContent = 
-        `${foundFlags.length}/5 flags found • ${points} points`;
+      document.getElementById('progress-text').textContent = `${foundFlags.length}/5 flags • ${points} points`;
     }
 
     function showSuccess() {
-      document.querySelector('.grid').classList.add('hidden');
+      document.querySelector('.space-y-8').classList.add('hidden');
       document.getElementById('success-screen').classList.remove('hidden');
-      document.getElementById('points-earned').innerHTML = 
-        `Points earned: <span class="text-cyan-400">${points}</span>`;
-      
-      // Big celebration confetti
+      document.getElementById('points-earned').textContent = `${points} points earned`;
+
       confetti({
-        particleCount: 150,
-        spread: 90,
+        particleCount: 200,
+        spread: 100,
         origin: { y: 0.6 }
       });
-      setTimeout(() => {
-        confetti({
-          particleCount: 100,
-          spread: 120,
-          origin: { y: 0.6 }
-        });
-      }, 500);
     }
   </script>
 
