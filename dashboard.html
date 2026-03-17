@@ -5,34 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard – AFTeen SecLabs</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 </head>
 <body class="bg-gray-950 text-white min-h-screen flex items-center justify-center p-6">
 
   <div class="max-w-2xl text-center bg-gray-900 rounded-2xl p-12 border border-cyan-900/40 shadow-2xl">
 
-    <h1 class="text-5xl font-bold text-cyan-400 mb-6">Welcome, Cadet!</h1>
+    <!-- Personalized Welcome -->
+    <h1 class="text-5xl font-bold mb-6">
+      Welcome, <span id="user-name" class="text-cyan-400">Cadet</span>!
+    </h1>
+
     <p class="text-xl text-gray-300 mb-10">
       You're now part of AFTeen SecLabs — forging Africa's next cyber defenders.
     </p>
 
-    <div class="space-y-6 mb-12">
-      <div class="bg-gray-800 p-6 rounded-xl">
-        <p class="text-lg font-medium">Current Progress</p>
-        <p class="text-3xl font-bold text-cyan-400 mt-2">1 Lab Completed</p>
-        <p class="text-gray-400 text-sm">(Recon Mission 1)</p>
+    <!-- Progress Card -->
+    <div class="bg-gray-800 p-8 rounded-xl mb-12 border border-gray-700">
+      <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Your Progress</h3>
+      <p id="points-display" class="text-4xl font-bold text-cyan-400">0 points</p>
+      <p class="text-gray-400 mt-2">Labs completed: 1 (Recon Mission 1)</p>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <a href="/labs/recon-mission-1.html" class="bg-gray-800 hover:bg-gray-700 p-6 rounded-xl border border-cyan-800/50 transition text-center">
+        <h3 class="text-xl font-semibold text-cyan-400 mb-2">Continue Recon Mission 1</h3>
+        <p class="text-gray-400">OSINT Investigation</p>
+      </a>
+      <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 text-center opacity-60">
+        <h3 class="text-xl font-semibold text-gray-500 mb-2">More Labs Coming</h3>
+        <p class="text-gray-500">Web Exploitation • Network Pentesting • And more...</p>
       </div>
     </div>
 
-    <a href="/labs/recon-mission-1.html" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-5 px-12 rounded-full text-xl transition mb-6">
-      Continue Recon Mission 1 →
-    </a>
-
-    <p class="text-gray-400">
-      <a href="/signup.html" class="text-cyan-400 hover:text-cyan-300">Log out</a> • 
-      <a href="/academy/recon-intro.html" class="text-cyan-400 hover:text-cyan-300">Back to Lessons</a>
-    </p>
+    <!-- Logout & Links -->
+    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+      <button id="logout-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-lg transition">
+        Log Out
+      </button>
+      <a href="/academy/recon-intro.html" class="inline-block bg-gray-700 hover:bg-gray-800 text-white font-bold py-4 px-10 rounded-full text-lg transition border border-gray-600">
+        Back to Lessons →
+      </a>
+    </div>
 
   </div>
+
+  <script>
+    // === REPLACE WITH YOUR REAL FIREBASE CONFIG ===
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY_HERE",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // Listen for auth state
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in
+        document.getElementById('user-name').textContent = user.displayName || user.email.split('@')[0];
+      } else {
+        // No user → redirect to login
+        window.location.href = '/login.html';
+      }
+    });
+
+    // Logout button
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      auth.signOut().then(() => {
+        window.location.href = '/';
+      }).catch((error) => {
+        alert("Logout error: " + error.message);
+      });
+    });
+
+    // Load points from localStorage (for now)
+    let points = parseInt(localStorage.getItem('recon1_points') || '0');
+    document.getElementById('points-display').textContent = `${points} points`;
+  </script>
 
 </body>
 </html>
