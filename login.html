@@ -5,27 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Log In – AFTeen SecLabs</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="/firebase-config.js"></script>
 </head>
 <body class="bg-gray-950 text-white min-h-screen flex items-center justify-center p-6">
 
   <div class="max-w-md w-full bg-gray-900 rounded-2xl p-10 shadow-2xl border border-cyan-900/40">
 
-    <!-- Header -->
     <div class="text-center mb-10">
       <h1 class="text-4xl font-bold text-cyan-400">AFTeen SecLabs</h1>
       <p class="text-xl text-gray-400 mt-2">Log In to Your Account</p>
     </div>
 
-    <!-- Error Message -->
     <div id="error-message" class="hidden bg-red-900/50 border border-red-700 text-red-200 p-4 rounded-lg mb-6 text-center"></div>
-
-    <!-- Success Message -->
     <div id="success-message" class="hidden bg-green-900/50 border border-green-700 text-green-200 p-4 rounded-lg mb-6 text-center"></div>
 
-    <!-- Email/Password Login Form -->
     <form id="login-form" class="space-y-6">
       <div>
         <label for="email" class="block text-gray-300 mb-2 font-medium">Email Address</label>
@@ -42,7 +37,6 @@
       </button>
     </form>
 
-    <!-- Google Sign-In -->
     <div class="my-8 text-center text-gray-500">— or —</div>
 
     <button id="google-login" class="w-full bg-white hover:bg-gray-100 text-gray-900 font-medium py-4 px-8 rounded-full text-lg transition flex items-center justify-center gap-3 border border-gray-300">
@@ -50,7 +44,6 @@
       Log In with Google
     </button>
 
-    <!-- Signup Link -->
     <p class="text-center mt-8 text-gray-400">
       Don't have an account? 
       <a href="/signup.html" class="text-cyan-400 hover:text-cyan-300 font-medium">Sign up here</a>
@@ -58,39 +51,31 @@
 
   </div>
 
-  <script src="/firebase-config.js">
-   
-   // Initialize Firebase using the injected config
+  <script>
     firebase.initializeApp(window.firebaseConfig);
-      const auth = firebase.auth();
-    
-      // Email/Password Login
+    const auth = firebase.auth();
+
     document.getElementById('login-form').addEventListener('submit', (e) => {
       e.preventDefault();
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
       auth.signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
+        .then(() => {
           showSuccess("Logged in successfully! Redirecting...");
           setTimeout(() => window.location.href = '/dashboard.html', 2000);
         })
-        .catch((error) => {
-          showError(error.message);
-        });
+        .catch((error) => showError(error.message));
     });
 
-    // Google Sign-In
     document.getElementById('google-login').addEventListener('click', () => {
       const provider = new firebase.auth.GoogleAuthProvider();
       auth.signInWithPopup(provider)
-        .then((result) => {
+        .then(() => {
           showSuccess("Logged in with Google! Redirecting...");
           setTimeout(() => window.location.href = '/dashboard.html', 2000);
         })
-        .catch((error) => {
-          showError(error.message);
-        });
+        .catch((error) => showError(error.message));
     });
 
     function showError(msg) {
