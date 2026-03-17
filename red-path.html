@@ -23,110 +23,134 @@
     </div>
 
     <div class="text-center mb-12">
-      <p class="text-2xl text-gray-300">Learn to think and operate like a professional ethical hacker.</p>
-      <p class="text-lg text-gray-400 mt-3">Master the full attack lifecycle — from recon to persistence.</p>
+      <p class="text-2xl text-gray-300">Learn to think, plan, and execute like a professional ethical hacker.</p>
+      <p class="text-lg text-gray-400 mt-3">Master the full attack lifecycle — from recon to full compromise.</p>
     </div>
 
-    <!-- Modules List -->
+    <!-- Tiered Progression -->
+    <div class="grid md:grid-cols-4 gap-6 mb-16">
+
+      <!-- Cadet -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-emerald-600/30">
+        <div class="text-emerald-400 text-5xl mb-4">🟢</div>
+        <h4 class="text-xl font-bold mb-1">Cadet Level</h4>
+        <p class="text-emerald-400 text-sm mb-6">Foundation • Awareness</p>
+        <p class="text-gray-400 text-sm">Build attacker mindset and basic intelligence skills.</p>
+      </div>
+
+      <!-- Operator -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-blue-600/30">
+        <div class="text-blue-400 text-5xl mb-4">🔵</div>
+        <h4 class="text-xl font-bold mb-1">Operator Level</h4>
+        <p class="text-blue-400 text-sm mb-6">Execution • Practical Attacks</p>
+        <p class="text-gray-400 text-sm">Execute real attacks on web, network, and credentials.</p>
+      </div>
+
+      <!-- Specialist -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-purple-600/30">
+        <div class="text-purple-400 text-5xl mb-4">🟣</div>
+        <h4 class="text-xl font-bold mb-1">Specialist Level</h4>
+        <p class="text-purple-400 text-sm mb-6">Advanced • Deep Operations</p>
+        <p class="text-gray-400 text-sm">Master malware, exploits, and post-exploitation.</p>
+      </div>
+
+      <!-- Elite -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-red-600/30">
+        <div class="text-red-400 text-5xl mb-4">🔴</div>
+        <h4 class="text-xl font-bold mb-1">Elite Level</h4>
+        <p class="text-red-400 text-sm mb-6">Expert • Full Simulations</p>
+        <p class="text-gray-400 text-sm">Operate like real-world threat actors in complex scenarios.</p>
+      </div>
+
+    </div>
+
+    <!-- Modules Breakdown -->
+    <h3 class="text-2xl font-semibold mb-8 text-center">Red Team Modules</h3>
+
     <div class="space-y-8">
 
-      <!-- Module 1 -->
-      <div class="bg-gray-900 rounded-3xl p-8 border border-red-900/40 hover:border-red-500 transition group">
-        <div class="flex justify-between items-start">
+      <!-- Cadet Level -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-emerald-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">🟢</span>
           <div>
-            <div class="text-red-400 text-sm font-medium mb-2">MODULE 1 • BEGINNER</div>
-            <h3 class="text-3xl font-bold mb-3 group-hover:text-red-400 transition">Reconnaissance & Intelligence Gathering</h3>
-            <p class="text-gray-400">Learn how attackers map targets using OSINT before any attack begins.</p>
+            <h4 class="text-2xl font-bold">Cadet Level — Foundation</h4>
+            <p class="text-emerald-400">Awareness + Intelligence Gathering</p>
           </div>
-          <div class="text-5xl opacity-30 group-hover:opacity-100 transition">🔍</div>
         </div>
-        <a href="/academy/recon-intro.html" class="mt-8 inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-10 rounded-full transition">
-          Start Module 1 →
-        </a>
+        <div class="pl-12 space-y-4">
+          <a href="/academy/recon-intro.html" class="block bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl transition">
+            <span class="text-emerald-400 font-medium">Module 1:</span> Reconnaissance & Intelligence Gathering
+          </a>
+          <a href="#" class="block bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl transition">
+            <span class="text-emerald-400 font-medium">Module 5:</span> Social Engineering
+          </a>
+        </div>
       </div>
 
-      <!-- Module 2 -->
-      <div class="bg-gray-900 rounded-3xl p-8 border border-red-900/40 hover:border-red-500 transition group">
-        <div class="flex justify-between items-start">
+      <!-- Operator Level -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-blue-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">🔵</span>
           <div>
-            <div class="text-red-400 text-sm font-medium mb-2">MODULE 2 • BEGINNER</div>
-            <h3 class="text-3xl font-bold mb-3 group-hover:text-red-400 transition">Web Application Exploitation</h3>
-            <p class="text-gray-400">Master the most common attack vector — SQLi, XSS, CSRF, file uploads & API abuse.</p>
+            <h4 class="text-2xl font-bold">Operator Level — Execution</h4>
+            <p class="text-blue-400">Practical Attack Techniques</p>
           </div>
-          <div class="text-5xl opacity-30 group-hover:opacity-100 transition">🌐</div>
         </div>
-        <a href="#" class="mt-8 inline-block bg-gray-700 text-gray-400 font-semibold py-3 px-10 rounded-full cursor-not-allowed">
-          Coming Soon
-        </a>
+        <div class="pl-12 space-y-4">
+          <a href="#" class="block bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl transition">
+            <span class="text-blue-400 font-medium">Module 2:</span> Web Application Exploitation
+          </a>
+          <a href="#" class="block bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl transition">
+            <span class="text-blue-400 font-medium">Module 4:</span> Password & Credential Attacks
+          </a>
+          <a href="#" class="block bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl transition">
+            <span class="text-blue-400 font-medium">Module 3:</span> Network Penetration Testing
+          </a>
+        </div>
       </div>
 
-      <!-- Module 3 -->
-      <div class="bg-gray-900 rounded-3xl p-8 border border-red-900/40 hover:border-red-500 transition group">
-        <div class="flex justify-between items-start">
+      <!-- Specialist Level -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-purple-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">🟣</span>
           <div>
-            <div class="text-red-400 text-sm font-medium mb-2">MODULE 3 • INTERMEDIATE</div>
-            <h3 class="text-3xl font-bold mb-3 group-hover:text-red-400 transition">Network Penetration Testing</h3>
-            <p class="text-gray-400">Port scanning, service enumeration, exploitation, lateral movement & privilege escalation.</p>
+            <h4 class="text-2xl font-bold">Specialist Level — Advanced Operations</h4>
+            <p class="text-purple-400">Deep Technical Attacks</p>
           </div>
-          <div class="text-5xl opacity-30 group-hover:opacity-100 transition">🔗</div>
         </div>
-        <a href="#" class="mt-8 inline-block bg-gray-700 text-gray-400 font-semibold py-3 px-10 rounded-full cursor-not-allowed">
-          Coming Soon
-        </a>
+        <div class="pl-12 space-y-4">
+          <a href="#" class="block bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl transition">
+            <span class="text-purple-400 font-medium">Module 6:</span> Malware & Exploit Basics
+          </a>
+          <a href="#" class="block bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl transition">
+            <span class="text-purple-400 font-medium">Module 7:</span> Post-Exploitation
+          </a>
+        </div>
       </div>
 
-      <!-- Module 4 -->
-      <div class="bg-gray-900 rounded-3xl p-8 border border-red-900/40 hover:border-red-500 transition group">
-        <div class="flex justify-between items-start">
+      <!-- Elite Level -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-red-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">🔴</span>
           <div>
-            <div class="text-red-400 text-sm font-medium mb-2">MODULE 4 • INTERMEDIATE</div>
-            <h3 class="text-3xl font-bold mb-3 group-hover:text-red-400 transition">Password & Credential Attacks</h3>
-            <p class="text-gray-400">Hash cracking, credential stuffing, password spraying & brute force techniques.</p>
+            <h4 class="text-2xl font-bold">Elite Level — Full Attack Simulation</h4>
+            <p class="text-red-400">Real-World Cyber Warfare</p>
           </div>
-          <div class="text-5xl opacity-30 group-hover:opacity-100 transition">🔑</div>
         </div>
-        <a href="#" class="mt-8 inline-block bg-gray-700 text-gray-400 font-semibold py-3 px-10 rounded-full cursor-not-allowed">
-          Coming Soon
-        </a>
-      </div>
-
-      <!-- Module 5 -->
-      <div class="bg-gray-900 rounded-3xl p-8 border border-red-900/40 hover:border-red-500 transition group">
-        <div class="flex justify-between items-start">
-          <div>
-            <div class="text-red-400 text-sm font-medium mb-2">MODULE 5 • INTERMEDIATE</div>
-            <h3 class="text-3xl font-bold mb-3 group-hover:text-red-400 transition">Social Engineering</h3>
-            <p class="text-gray-400">Phishing, pretexting, baiting & psychological manipulation techniques.</p>
+        <div class="pl-12">
+          <div class="bg-gray-800 p-6 rounded-2xl text-gray-400">
+            Integrated Cyber Operations (Capstone)<br>
+            <span class="text-xs">Full enterprise breach simulations • Red vs Blue war games • Multi-stage attack chains</span>
           </div>
-          <div class="text-5xl opacity-30 group-hover:opacity-100 transition">🧠</div>
-        </div>
-        <a href="#" class="mt-8 inline-block bg-gray-700 text-gray-400 font-semibold py-3 px-10 rounded-full cursor-not-allowed">
-          Coming Soon
-        </a>
-      </div>
-
-      <!-- Module 6 & 7 (Advanced) -->
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-gray-900 rounded-3xl p-8 border border-red-900/40 hover:border-red-500 transition group">
-          <div class="text-red-400 text-sm font-medium mb-2">MODULE 6 • ADVANCED</div>
-          <h3 class="text-2xl font-bold mb-3 group-hover:text-red-400 transition">Malware & Exploit Basics</h3>
-          <p class="text-gray-400 text-sm">Reverse engineering, payload creation, shellcode & exploit frameworks.</p>
-          <a href="#" class="mt-6 inline-block text-cyan-400 text-sm font-medium">Coming Soon →</a>
-        </div>
-
-        <div class="bg-gray-900 rounded-3xl p-8 border border-red-900/40 hover:border-red-500 transition group">
-          <div class="text-red-400 text-sm font-medium mb-2">MODULE 7 • ADVANCED</div>
-          <h3 class="text-2xl font-bold mb-3 group-hover:text-red-400 transition">Post-Exploitation</h3>
-          <p class="text-gray-400 text-sm">Persistence, data exfiltration, covering tracks & Command & Control (C2).</p>
-          <a href="#" class="mt-6 inline-block text-cyan-400 text-sm font-medium">Coming Soon →</a>
         </div>
       </div>
 
     </div>
 
     <!-- Footer Note -->
-    <div class="text-center mt-16 text-gray-500 text-sm">
-      Complete modules in order to unlock advanced CyberRange scenarios and Purple Team missions.
+    <div class="text-center mt-20 text-gray-500 text-sm">
+      Complete Red Team modules in order to unlock advanced CyberRange scenarios and Purple Team missions.
     </div>
 
   </div>
