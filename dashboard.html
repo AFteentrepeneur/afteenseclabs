@@ -120,7 +120,9 @@
   </div>
 
   <script>
+      if (!firebase.apps.length) {
     firebase.initializeApp(window.firebaseConfig);
+  }
     const auth = firebase.auth();
 
     auth.onAuthStateChanged((user) => {
