@@ -8,118 +8,82 @@
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
   <script src="/firebase-config.js"></script>
-  <style>
-    .progress-ring {
-      transition: stroke-dashoffset 0.5s ease;
-    }
-  </style>
 </head>
 <body class="bg-gray-950 text-white min-h-screen p-6">
 
   <div class="max-w-6xl mx-auto">
 
-    <!-- Top Navigation -->
-    <div class="flex justify-between items-center mb-10">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-12">
       <h1 class="text-4xl font-bold text-cyan-400">AFTeen SecLabs</h1>
-      <button id="logout-btn" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full text-sm font-medium transition">
+      <button id="logout-btn" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full text-sm font-medium">
         Log Out
       </button>
     </div>
 
-    <!-- Personalized Welcome -->
+    <!-- Welcome -->
     <div class="mb-12">
-      <h2 class="text-5xl font-bold mb-3">Welcome back, <span id="user-name" class="text-cyan-400">Cadet</span>!</h2>
-      <p class="text-xl text-gray-400">You're on track to become one of Africa's next cyber defenders.</p>
+      <h2 class="text-5xl font-bold">Welcome back, <span id="user-name" class="text-cyan-400">Cadet</span>!</h2>
+      <p class="text-xl text-gray-400 mt-3">Choose your path and begin forging your future as a cyber defender.</p>
     </div>
 
-    <!-- Overall Progress -->
-    <div class="bg-gray-900 rounded-3xl p-8 mb-12 border border-cyan-900/30">
-      <h3 class="text-2xl font-semibold mb-6">Your Overall Progress</h3>
-      <div class="grid grid-cols-3 gap-8">
-        <div class="text-center">
-          <div class="text-6xl font-bold text-cyan-400 mb-2" id="total-points">0</div>
-          <p class="text-gray-400">Total Points</p>
-        </div>
-        <div class="text-center">
-          <div class="text-6xl font-bold text-emerald-400 mb-2" id="labs-completed">1</div>
-          <p class="text-gray-400">Labs Completed</p>
-        </div>
-        <div class="text-center">
-          <div class="text-6xl font-bold text-amber-400 mb-2">Cadet</div>
-          <p class="text-gray-400">Current Rank</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Learning Paths -->
-    <h3 class="text-2xl font-semibold mb-6">Choose Your Path</h3>
+    <!-- Path Selection -->
     <div class="grid md:grid-cols-3 gap-8">
 
       <!-- Red Team Path -->
-      <div class="bg-gray-900 rounded-3xl p-8 border border-red-900/30 hover:border-red-500/50 transition group">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="text-4xl">🔴</div>
-          <div>
-            <h4 class="text-2xl font-bold">Red Team Path</h4>
-            <p class="text-red-400 text-sm">Offensive Security</p>
-          </div>
+      <a href="/red-path.html" class="group">
+        <div class="bg-gray-900 border border-red-600/30 hover:border-red-500 rounded-3xl p-8 transition-all">
+          <div class="text-6xl mb-6">🔴</div>
+          <h3 class="text-3xl font-bold mb-2">Red Team Path</h3>
+          <p class="text-red-400 mb-6">Offensive Security • Ethical Hacking</p>
+          <p class="text-gray-400 text-sm">Learn to think and attack like a professional hacker.</p>
+          <div class="mt-8 text-cyan-400 font-medium group-hover:underline">Enter Red Path →</div>
         </div>
-        <p class="text-gray-400 mb-6">Learn to think and act like an ethical hacker.</p>
-        <div class="space-y-4">
-          <a href="/academy/recon-intro.html" class="block bg-gray-800 hover:bg-gray-700 p-4 rounded-2xl transition">
-            Module 1: Reconnaissance & OSINT <span class="text-cyan-400">→</span>
-          </a>
-          <div class="text-gray-500 text-sm pl-4">• Web Exploitation<br>• Network Penetration<br>• Credential Attacks</div>
-        </div>
-      </div>
+      </a>
 
       <!-- Blue Team Path -->
-      <div class="bg-gray-900 rounded-3xl p-8 border border-blue-900/30 hover:border-blue-500/50 transition group">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="text-4xl">🔵</div>
-          <div>
-            <h4 class="text-2xl font-bold">Blue Team Path</h4>
-            <p class="text-blue-400 text-sm">Defensive Security</p>
-          </div>
+      <a href="/blue-path.html" class="group">
+        <div class="bg-gray-900 border border-blue-600/30 hover:border-blue-500 rounded-3xl p-8 transition-all">
+          <div class="text-6xl mb-6">🔵</div>
+          <h3 class="text-3xl font-bold mb-2">Blue Team Path</h3>
+          <p class="text-blue-400 mb-6">Defensive Security • SOC Operations</p>
+          <p class="text-gray-400 text-sm">Learn to detect, monitor, and defend systems.</p>
+          <div class="mt-8 text-cyan-400 font-medium group-hover:underline">Enter Blue Path →</div>
         </div>
-        <p class="text-gray-400 mb-6">Learn to detect, monitor, and defend systems.</p>
-        <div class="space-y-4">
-          <a href="/academy/security-monitoring.html" class="block bg-gray-800 hover:bg-gray-700 p-4 rounded-2xl transition">
-            Module 1: Security Monitoring <span class="text-cyan-400">→</span>
-          </a>
-          <div class="text-gray-500 text-sm pl-4">• SIEM & Log Analysis<br>• Threat Detection<br>• Incident Response</div>
-        </div>
-      </div>
+      </a>
 
       <!-- Purple Team Path -->
-      <div class="bg-gray-900 rounded-3xl p-8 border border-purple-900/30 hover:border-purple-500/50 transition group">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="text-4xl">🟣</div>
-          <div>
-            <h4 class="text-2xl font-bold">Purple Team Path</h4>
-            <p class="text-purple-400 text-sm">Combined Offense + Defense</p>
-          </div>
+      <a href="/purple-path.html" class="group">
+        <div class="bg-gray-900 border border-purple-600/30 hover:border-purple-500 rounded-3xl p-8 transition-all">
+          <div class="text-6xl mb-6">🟣</div>
+          <h3 class="text-3xl font-bold mb-2">Purple Team Path</h3>
+          <p class="text-purple-400 mb-6">Combined Offense + Defense</p>
+          <p class="text-gray-400 text-sm">Learn to attack and defend simultaneously.</p>
+          <div class="mt-8 text-cyan-400 font-medium group-hover:underline">Enter Purple Path →</div>
         </div>
-        <p class="text-gray-400 mb-6">Learn to improve security by combining attack and defense.</p>
-        <div class="text-gray-500 text-sm pl-4">Coming Soon:<br>• Attack vs Defense Simulations<br>• Detection Engineering<br>• Security Hardening</div>
-      </div>
+      </a>
 
     </div>
 
-    <!-- Quick Labs -->
-    <div class="mt-16">
-      <h3 class="text-2xl font-semibold mb-6">Quick Start Labs</h3>
-      <div class="grid md:grid-cols-2 gap-6">
-        <a href="/labs/recon-mission-1.html" class="bg-gray-800 hover:bg-gray-700 p-8 rounded-3xl transition group">
-          <div class="text-cyan-400 text-sm mb-2">RED TEAM • MODULE 1</div>
-          <h4 class="text-2xl font-bold group-hover:text-cyan-400 transition">Recon Mission 1: OSINT</h4>
-          <p class="text-gray-400 mt-4">Gather intelligence on NovaMobile</p>
+    <!-- Quick Access -->
+    <div class="mt-16 bg-gray-900 rounded-3xl p-8">
+      <h3 class="text-2xl font-semibold mb-6">Quick Access</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <a href="/labs/recon-mission-1.html" class="bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl text-center transition">
+          <p class="text-cyan-400 text-sm">Red Team</p>
+          <p class="font-medium">Recon Mission 1</p>
         </a>
-
-        <a href="/labs/recon-mission-2.html" class="bg-gray-800 hover:bg-gray-700 p-8 rounded-3xl transition group">
-          <div class="text-cyan-400 text-sm mb-2">RED TEAM • MODULE 1</div>
-          <h4 class="text-2xl font-bold group-hover:text-cyan-400 transition">Recon Mission 2: Subdomains</h4>
-          <p class="text-gray-400 mt-4">Discover hidden services</p>
+        <a href="/blue-path.html" class="bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl text-center transition">
+          <p class="text-blue-400 text-sm">Blue Team</p>
+          <p class="font-medium">Security Monitoring</p>
+        </a>
+        <a href="/cyberarena.html" class="bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl text-center transition">
+          <p class="text-amber-400 text-sm">CyberArena</p>
+          <p class="font-medium">Competitions</p>
+        </a>
+        <a href="/cyberrange.html" class="bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl text-center transition">
+          <p class="text-purple-400 text-sm">CyberRange</p>
+          <p class="font-medium">Full Simulations</p>
         </a>
       </div>
     </div>
@@ -139,18 +103,8 @@
     });
 
     document.getElementById('logout-btn').addEventListener('click', () => {
-      auth.signOut().then(() => {
-        window.location.href = '/';
-      });
+      auth.signOut().then(() => window.location.href = '/');
     });
-
-    // Load total points from localStorage
-    let totalPoints = 
-      parseInt(localStorage.getItem('recon1_points') || '0') + 
-      parseInt(localStorage.getItem('recon2_points') || '0');
-    
-    // You can update this dynamically later when you add more labs
-    document.getElementById('total-points').textContent = totalPoints;
   </script>
 
 </body>
