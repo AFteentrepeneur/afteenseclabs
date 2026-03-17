@@ -3,102 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Academy: Intro to Reconnaissance | AFTeen SecLabs</title>
+  <title>Academy: Reconnaissance & OSINT | AFTeen SecLabs</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <style>
+    .section { scroll-margin-top: 80px; }
+  </style>
 </head>
 <body class="bg-gray-950 text-white min-h-screen">
 
-  <!-- Progress Bar -->
+  <!-- Fixed Progress Bar -->
   <div class="fixed top-0 left-0 w-full h-2 bg-gray-800 z-50">
-    <div id="progress-bar" class="h-2 bg-cyan-500 w-0 transition-all duration-500"></div>
+    <div id="progress-bar" class="h-2 bg-gradient-to-r from-cyan-400 to-blue-500 w-0 transition-all duration-300"></div>
   </div>
 
-  <div class="max-w-4xl mx-auto p-6 pt-12">
+  <div class="max-w-4xl mx-auto p-6 pt-16">
 
-    <!-- Header -->
     <div class="flex items-center justify-between mb-10">
-      <a href="/" class="text-cyan-400 hover:text-cyan-300 flex items-center text-lg font-medium">
-        ← Back to Dashboard
-      </a>
-      <h1 class="text-4xl font-bold text-cyan-400 text-center">Academy: Reconnaissance & OSINT</h1>
+      <a href="/" class="text-cyan-400 hover:text-cyan-300 flex items-center text-lg">← Dashboard</a>
+      <h1 class="text-4xl font-bold text-cyan-400">Module 1: Reconnaissance & OSINT</h1>
     </div>
 
-    <!-- Intro Card -->
-    <div class="bg-gray-900 rounded-3xl p-8 mb-10 border border-cyan-900/30">
-      <h2 class="text-4xl font-bold mb-6 text-center">Welcome to Your First Lesson, Cadet! 👋</h2>
-      <p class="text-xl text-gray-300 text-center max-w-2xl mx-auto">
-        Before any hacker touches a system, they do one thing first: <strong>Reconnaissance</strong>.<br>
-        This is where the real game begins.
-      </p>
+    <div class="text-center mb-12">
+      <p class="text-2xl text-gray-300">Before any attack begins, smart hackers do one thing first...</p>
+      <p class="text-5xl font-bold text-cyan-400 mt-4">They Recon.</p>
     </div>
 
     <!-- Section 1 -->
-    <div class="academy-section mb-12" id="section1">
-      <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
-        <span class="text-3xl">🔍</span> What is Reconnaissance?
-      </h3>
-      <p class="text-gray-300 leading-relaxed">
-        Reconnaissance (or "recon") means gathering information about a target <strong>without being noticed</strong>. 
-        It's like being a detective before the crime even happens.
-      </p>
-      <p class="mt-4 text-gray-300">
-        In cybersecurity, we call this <strong>OSINT</strong> — <strong>Open Source Intelligence</strong>. 
-        Everything is done using public information on the internet.
+    <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec1">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🔍</span> What is Reconnaissance?
+      </h2>
+      <p class="text-lg text-gray-300 leading-relaxed">
+        Reconnaissance is the **information gathering phase**. Attackers collect data about a target without touching the system. 
+        This phase is silent, legal (if done ethically), and extremely powerful.
       </p>
     </div>
 
     <!-- Section 2 -->
-    <div class="academy-section mb-12" id="section2">
-      <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
-        <span class="text-3xl">⚡</span> Why Does Recon Matter?
-      </h3>
-      <ul class="space-y-4 text-gray-300">
-        <li class="flex gap-3"><span class="text-cyan-400">•</span> Helps attackers find weak points (emails, subdomains, tech used)</li>
-        <li class="flex gap-3"><span class="text-cyan-400">•</span> Makes phishing and social engineering attacks much stronger</li>
-        <li class="flex gap-3"><span class="text-cyan-400">•</span> Ethical hackers use it to protect companies before real attacks happen</li>
-        <li class="flex gap-3"><span class="text-cyan-400">•</span> Most real breaches start with good recon</li>
-      </ul>
-    </div>
-
-    <!-- Section 3 -->
-    <div class="academy-section mb-12" id="section3">
-      <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-        <span class="text-3xl">🛠️</span> 5 Basic OSINT Techniques You’ll Use Today
-      </h3>
+    <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec2">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🎯</span> Why Recon Matters
+      </h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">1. Google Dorks</strong><br>
-          Special searches like <code>site:novamobile.africa filetype:pdf</code>
+          <strong>80% of success</strong><br>
+          Good recon determines most of an attack’s success.
         </div>
         <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">2. Social Media Search</strong><br>
-          Check LinkedIn, X, Facebook for employee posts
-        </div>
-        <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">3. WHOIS & DNS Lookup</strong><br>
-          Find out who owns the domain and where it’s hosted
-        </div>
-        <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">4. Public Documents</strong><br>
-          PDFs often leak names, emails, and software versions
-        </div>
-        <div class="bg-gray-800 p-6 rounded-2xl md:col-span-2">
-          <strong class="text-cyan-400">5. Subdomain Tools</strong><br>
-          Free tools like crt.sh can reveal hidden parts of a website
+          <strong>Low risk</strong><br>
+          Passive recon is usually legal and hard to detect.
         </div>
       </div>
     </div>
 
-    <!-- Quiz Section -->
-    <div class="bg-gray-900 rounded-3xl p-8 border border-cyan-900/30 mb-12" id="quiz-section">
-      <h3 class="text-3xl font-bold text-center mb-8">Quick Quiz: Test Your Knowledge 🎯</h3>
-      <div id="quiz-container" class="space-y-10"></div>
-      <div id="quiz-result" class="hidden text-center mt-10"></div>
+    <!-- Section 3 -->
+    <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec3">
+      <h2 class="text-3xl font-bold mb-6">Key Skills You Will Master</h2>
+      <div class="space-y-8">
+        <div class="flex gap-6">
+          <div class="text-5xl">🌐</div>
+          <div>
+            <h4 class="font-semibold text-xl">Domain & Subdomain Enumeration</h4>
+            <p class="text-gray-400">Finding all websites and hidden services belonging to a company.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="text-5xl">📄</div>
+          <div>
+            <h4 class="font-semibold text-xl">Metadata Extraction</h4>
+            <p class="text-gray-400">Pulling hidden information from public documents (PDFs, Word files).</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="text-5xl">👥</div>
+          <div>
+            <h4 class="font-semibold text-xl">Social Media Intelligence</h4>
+            <p class="text-gray-400">Profiling employees and discovering leaked tech details.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Start Mission Button -->
-    <div id="mission-button" class="hidden text-center mt-8">
+    <!-- Interactive Quiz -->
+    <div class="bg-gray-900 rounded-3xl p-8 border border-cyan-900/30" id="quiz">
+      <h2 class="text-3xl font-bold text-center mb-8">Quick Knowledge Check 🎯</h2>
+      <div id="quiz-questions" class="space-y-10"></div>
+      <div id="quiz-result" class="hidden text-center mt-12"></div>
+    </div>
+
+    <!-- Start Lab Button -->
+    <div id="start-lab-btn" class="hidden text-center mt-12">
       <a href="/labs/recon-mission-1.html" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-5 px-16 rounded-full text-2xl transition">
         Start Recon Mission 1 →
       </a>
@@ -107,94 +102,74 @@
   </div>
 
   <script>
-    // Progress Bar
+    // Progress bar
     window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      document.getElementById('progress-bar').style.width = scrollPercent + '%';
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("progress-bar").style.width = scrolled + "%";
     });
 
-    // Quiz Questions
-    const questions = [
-      {
-        q: "What does OSINT stand for?",
-        options: ["Open Source Intelligence", "Online Security Intelligence", "Official System Investigation Tool"],
-        answer: 0
-      },
-      {
-        q: "Why do attackers do reconnaissance first?",
-        options: ["To find weak points without being noticed", "To directly hack the system", "To install malware immediately"],
-        answer: 0
-      },
-      {
-        q: "Which of these is a common OSINT technique?",
-        options: ["Google Dorks", "Brute force attack", "SQL Injection"],
-        answer: 0
-      },
-      {
-        q: "What can public PDF documents often leak?",
-        options: ["Employee names and software versions", "Nothing useful", "Only pictures"],
-        answer: 0
-      },
-      {
-        q: "What is the goal of Recon Mission 1?",
-        options: ["To gather public information about NovaMobile", "To hack the website directly", "To create a virus"],
-        answer: 0
-      }
+    // Quiz Data
+    const quizData = [
+      { q: "What does OSINT stand for?", a: "Open Source Intelligence", options: ["Online Security Intelligence", "Open Source Intelligence", "Official System Investigation Tool"] },
+      { q: "Which type of recon is safer for beginners?", a: "Passive Recon", options: ["Active Recon", "Passive Recon", "Brute Force"] },
+      { q: "What can public PDFs often leak?", a: "Employee names and software versions", options: ["Nothing useful", "Employee names and software versions", "Only pictures"] },
+      { q: "Why is subdomain discovery important?", a: "Hidden services often live there", options: ["It is not important", "Hidden services often live there", "It slows down attacks"] },
+      { q: "What is the main goal of reconnaissance?", a: "To gather information without being noticed", options: ["To install malware", "To gather information without being noticed", "To delete logs"] }
     ];
 
     let score = 0;
-    const quizContainer = document.getElementById('quiz-container');
 
-    questions.forEach((q, index) => {
-      const div = document.createElement('div');
-      div.className = "bg-gray-800 p-6 rounded-2xl";
-      div.innerHTML = `
-        <p class="font-semibold mb-4">${index + 1}. ${q.q}</p>
-        <div class="space-y-3" id="q${index}"></div>
+    const quizContainer = document.getElementById('quiz-questions');
+
+    quizData.forEach((item, index) => {
+      const qDiv = document.createElement('div');
+      qDiv.className = "bg-gray-800 p-6 rounded-2xl";
+      qDiv.innerHTML = `
+        <p class="font-semibold mb-4 text-lg">${index + 1}. ${item.q}</p>
+        <div class="space-y-3" id="q-options-${index}"></div>
       `;
-      quizContainer.appendChild(div);
+      quizContainer.appendChild(qDiv);
 
-      const optionsDiv = div.querySelector(`#q${index}`);
-      q.options.forEach((option, i) => {
+      const optionsDiv = document.getElementById(`q-options-${index}`);
+      item.options.forEach((opt, i) => {
         const btn = document.createElement('button');
         btn.className = "w-full text-left p-4 bg-gray-700 hover:bg-gray-600 rounded-xl transition";
-        btn.textContent = option;
+        btn.textContent = opt;
         btn.onclick = () => {
-          if (i === q.answer) {
+          if (opt === item.a) {
             btn.classList.add('bg-green-600', 'text-white');
             score++;
           } else {
             btn.classList.add('bg-red-600', 'text-white');
           }
-          // Disable all buttons in this question
           optionsDiv.querySelectorAll('button').forEach(b => b.disabled = true);
         };
         optionsDiv.appendChild(btn);
       });
     });
 
-    // Show result and unlock mission after quiz
-    const checkQuiz = setInterval(() => {
-      if (document.querySelectorAll('button[disabled]').length === questions.length * questions[0].options.length) {
-        clearInterval(checkQuiz);
-        const result = document.getElementById('quiz-result');
-        result.classList.remove('hidden');
-        result.innerHTML = `
-          <h3 class="text-3xl font-bold text-cyan-400 mb-4">Quiz Complete!</h3>
-          <p class="text-2xl mb-6">You scored <span class="text-cyan-400">${score}/5</span></p>
-          <p class="text-lg text-gray-300 mb-8">Great job! You now understand reconnaissance.</p>
-          <button onclick="unlockMission()" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-4 px-12 rounded-full text-xl transition">
+    // Check if quiz is complete
+    const checkInterval = setInterval(() => {
+      if (document.querySelectorAll('button[disabled]').length === quizData.length * 3) {
+        clearInterval(checkInterval);
+        const resultDiv = document.getElementById('quiz-result');
+        resultDiv.classList.remove('hidden');
+        resultDiv.innerHTML = `
+          <h3 class="text-4xl font-bold text-cyan-400 mb-6">Quiz Complete! You scored ${score}/5</h3>
+          <p class="text-xl text-gray-300 mb-8">Excellent! You now understand the foundation of reconnaissance.</p>
+          <button onclick="startMission()" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-5 px-16 rounded-full text-2xl transition">
             Start Recon Mission 1 →
           </button>
         `;
+        if (score >= 4) confetti({ particleCount: 150, spread: 80 });
       }
-    }, 1000);
+    }, 800);
 
-    function unlockMission() {
-      document.getElementById('mission-button').classList.remove('hidden');
-      confetti({ particleCount: 100, spread: 70 });
+    function startMission() {
+      document.getElementById('start-lab-btn').classList.remove('hidden');
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     }
   </script>
 
