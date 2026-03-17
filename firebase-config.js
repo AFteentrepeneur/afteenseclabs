@@ -2,7 +2,7 @@
 
 // firebase-config.js — Secure config injected by Vercel
 window.firebaseConfig = {
-  apiKey: "AIzaSyBWgzPiUi5RU9iL4ZfRfmnFvHmyUEHjggQ",                    // ← Replace with your real apiKey
+  apiKey: "AIzaSyBWgzPiUi5RU9iL4ZfRfmnFvHmyUEHjggQ",                  
   authDomain: "afteenseclabs-aabd0.firebaseapp.com",
   projectId: "afteenseclabs-aabd0",
   storageBucket: "afteenseclabs-aabd0.firebasestorage.app",
