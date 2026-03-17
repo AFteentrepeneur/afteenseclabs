@@ -96,7 +96,7 @@
       auth.signInWithPopup(provider)
         .then((result) => {
           showSuccess("Signed up with Google! Redirecting...");
-          setTimeout(() => window.location.href = '/', 2000);
+          setTimeout(() => window.location.href = '/dashboard.html', 2000);
         })
         .catch((error) => {
           showError(error.message);
