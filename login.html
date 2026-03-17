@@ -61,14 +61,13 @@
   <script>
     // === REPLACE WITH YOUR ACTUAL FIREBASE CONFIG ===
     const firebaseConfig = {
-  apiKey: "AIzaSyBWgzPiUi5RU9iL4ZfRfmnFvHmyUEHjggQ",
-  authDomain: "afteenseclabs-aabd0.firebaseapp.com",
-  projectId: "afteenseclabs-aabd0",
-  storageBucket: "afteenseclabs-aabd0.firebasestorage.app",
-  messagingSenderId: "45301896148",
-  appId: "1:45301896148:web:bff416b9ea807a9440bc41"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
-
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
