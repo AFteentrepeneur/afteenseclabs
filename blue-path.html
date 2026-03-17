@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blue Team Path – AFTeen SecLabs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="/firebase-config.js"></script>
+</head>
+<body class="bg-gray-950 text-white min-h-screen p-6">
+
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-12">
+      <a href="/dashboard.html" class="text-cyan-400 hover:text-cyan-300 flex items-center text-lg font-medium">
+        ← Back to Dashboard
+      </a>
+      <h1 class="text-4xl font-bold text-blue-400">🔵 Blue Team Path</h1>
+      <div class="text-sm text-gray-400">Defensive Security • SOC Operations</div>
+    </div>
+
+    <div class="text-center mb-12">
+      <p class="text-2xl text-gray-300">Master the art of defending systems and responding to real threats.</p>
+      <p class="text-lg text-gray-400 mt-3">From monitoring to architecture — become a professional defender.</p>
+    </div>
+
+    <!-- Certification Levels -->
+    <div class="grid md:grid-cols-4 gap-6 mb-16">
+
+      <!-- Cadet -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-cyan-600/30">
+        <div class="text-cyan-400 text-5xl mb-4">🔰</div>
+        <h4 class="text-xl font-bold mb-1">Cadet Level</h4>
+        <p class="text-cyan-400 text-sm mb-6">Observer • Foundation</p>
+        <p class="text-gray-400 text-sm">Learn to see and understand security events.</p>
+        <div class="mt-8 text-xs bg-cyan-900/50 px-4 py-2 rounded-full inline-block">Security Monitoring</div>
+      </div>
+
+      <!-- Operator -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-blue-600/30">
+        <div class="text-blue-400 text-5xl mb-4">⚙️</div>
+        <h4 class="text-xl font-bold mb-1">Operator Level</h4>
+        <p class="text-blue-400 text-sm mb-6">Defender • Execution</p>
+        <p class="text-gray-400 text-sm">Actively detect, respond, and contain threats.</p>
+        <div class="mt-8 text-xs bg-blue-900/50 px-4 py-2 rounded-full inline-block">Incident Response • Threat Intelligence • Endpoint & Network Defense</div>
+      </div>
+
+      <!-- Specialist -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-purple-600/30">
+        <div class="text-purple-400 text-5xl mb-4">🧠</div>
+        <h4 class="text-xl font-bold mb-1">Specialist Level</h4>
+        <p class="text-purple-400 text-sm mb-6">Investigator • Deep Analysis</p>
+        <p class="text-gray-400 text-sm">Perform deep investigation and forensics.</p>
+        <div class="mt-8 text-xs bg-purple-900/50 px-4 py-2 rounded-full inline-block">Digital Forensics</div>
+      </div>
+
+      <!-- Architect -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-amber-600/30">
+        <div class="text-amber-400 text-5xl mb-4">🏗️</div>
+        <h4 class="text-xl font-bold mb-1">Architect Level</h4>
+        <p class="text-amber-400 text-sm mb-6">Designer • Strategic</p>
+        <p class="text-gray-400 text-sm">Design secure systems at scale.</p>
+        <div class="mt-8 text-xs bg-amber-900/50 px-4 py-2 rounded-full inline-block">Security Architecture</div>
+      </div>
+
+    </div>
+
+    <!-- Modules Breakdown -->
+    <h3 class="text-2xl font-semibold mb-8 text-center">Blue Team Modules</h3>
+
+    <div class="space-y-8">
+
+      <!-- Cadet Level -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-cyan-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">🔰</span>
+          <div>
+            <h4 class="text-2xl font-bold">Cadet Level — Foundation</h4>
+            <p class="text-cyan-400">Observer • Learn to See Threats</p>
+          </div>
+        </div>
+        <div class="pl-12">
+          <a href="/academy/security-monitoring.html" class="block bg-gray-800 hover:bg-gray-700 p-6 rounded-2xl transition mb-4">
+            <span class="text-cyan-400 font-medium">Module 1:</span> Security Monitoring
+            <span class="block text-sm text-gray-400 mt-1">Log analysis, SIEM basics, alert triage</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Operator Level -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-blue-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">⚙️</span>
+          <div>
+            <h4 class="text-2xl font-bold">Operator Level — Execution</h4>
+            <p class="text-blue-400">Defender • Learn to Stop Threats</p>
+          </div>
+        </div>
+        <div class="pl-12 space-y-4">
+          <div class="bg-gray-800 p-6 rounded-2xl">
+            <span class="text-blue-400 font-medium">Module 2:</span> Incident Response
+          </div>
+          <div class="bg-gray-800 p-6 rounded-2xl">
+            <span class="text-blue-400 font-medium">Module 3:</span> Threat Intelligence
+          </div>
+          <div class="bg-gray-800 p-6 rounded-2xl">
+            <span class="text-blue-400 font-medium">Module 4:</span> Endpoint Security
+          </div>
+          <div class="bg-gray-800 p-6 rounded-2xl">
+            <span class="text-blue-400 font-medium">Module 5:</span> Network Defense
+          </div>
+        </div>
+      </div>
+
+      <!-- Specialist Level -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-purple-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">🧠</span>
+          <div>
+            <h4 class="text-2xl font-bold">Specialist Level — Deep Investigation</h4>
+            <p class="text-purple-400">Investigator • Learn to Understand Attacks</p>
+          </div>
+        </div>
+        <div class="pl-12">
+          <div class="bg-gray-800 p-6 rounded-2xl">
+            <span class="text-purple-400 font-medium">Module 6:</span> Digital Forensics
+          </div>
+        </div>
+      </div>
+
+      <!-- Architect Level -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-amber-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">🏗️</span>
+          <div>
+            <h4 class="text-2xl font-bold">Architect Level — Strategic Design</h4>
+            <p class="text-amber-400">Designer • Learn to Prevent Threats at Scale</p>
+          </div>
+        </div>
+        <div class="pl-12">
+          <div class="bg-gray-800 p-6 rounded-2xl">
+            <span class="text-amber-400 font-medium">Module 7:</span> Security Architecture
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Note -->
+    <div class="text-center mt-20 text-gray-500 text-sm">
+      Complete modules in order to unlock advanced CyberRange scenarios and Purple Team missions.
+    </div>
+
+  </div>
+
+</body>
+</html>
