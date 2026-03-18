@@ -16,7 +16,7 @@
     <!-- Header -->
     <div class="flex justify-between items-center mb-12">
       <h1 class="text-4xl font-bold text-cyan-400">AFTeen SecLabs</h1>
-      <button id="logout-btn" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full text-sm font-medium">
+      <button id="logout-btn" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full text-sm font-medium transition">
         Log Out
       </button>
     </div>
@@ -24,78 +24,82 @@
     <!-- Welcome -->
     <div class="mb-12">
       <h2 class="text-5xl font-bold">Welcome back, <span id="user-name" class="text-cyan-400">Cadet</span>!</h2>
-      <p class="text-xl text-gray-400 mt-3">You're on the path to becoming a certified cyber defender.</p>
+      <p class="text-xl text-gray-400 mt-3">You're building the future of African cybersecurity defense.</p>
     </div>
 
     <!-- Certification Progress -->
     <div class="bg-gray-900 rounded-3xl p-8 mb-12 border border-amber-500/30">
       <div class="flex items-center justify-between mb-6">
         <h3 class="text-2xl font-semibold">Your Certification Journey</h3>
-        <div class="text-amber-400 font-medium">CSCC • Cyber Cadet</div>
+        <div id="current-cert" class="text-amber-400 font-medium">CSCC • Cyber Cadet</div>
       </div>
       
-      <div class="grid grid-cols-4 gap-4">
+      <div class="grid grid-cols-4 gap-6">
+        <!-- CSCC -->
         <div class="text-center">
-          <div class="w-16 h-16 mx-auto bg-cyan-500/10 rounded-2xl flex items-center justify-center text-3xl mb-3 border border-cyan-500/30">1</div>
-          <p class="text-xs text-cyan-400 font-medium">CSCC</p>
+          <div id="cert1" class="w-16 h-16 mx-auto bg-emerald-500/10 rounded-2xl flex items-center justify-center text-3xl mb-3 border border-emerald-500/50">🛡️</div>
+          <p class="text-xs text-emerald-400 font-medium">CSCC</p>
           <p class="text-[10px] text-gray-500">Cyber Cadet</p>
         </div>
-        <div class="text-center opacity-40">
-          <div class="w-16 h-16 mx-auto bg-gray-700 rounded-2xl flex items-center justify-center text-3xl mb-3">2</div>
-          <p class="text-xs text-gray-400">CSSO</p>
+        <!-- CSSO -->
+        <div class="text-center">
+          <div id="cert2" class="w-16 h-16 mx-auto bg-blue-500/10 rounded-2xl flex items-center justify-center text-3xl mb-3 border border-blue-500/50">⚔️</div>
+          <p class="text-xs text-blue-400 font-medium">CSSO</p>
           <p class="text-[10px] text-gray-500">Security Operator</p>
         </div>
-        <div class="text-center opacity-40">
-          <div class="w-16 h-16 mx-auto bg-gray-700 rounded-2xl flex items-center justify-center text-3xl mb-3">3</div>
-          <p class="text-xs text-gray-400">CSCS</p>
+        <!-- CSCS -->
+        <div class="text-center">
+          <div id="cert3" class="w-16 h-16 mx-auto bg-purple-500/10 rounded-2xl flex items-center justify-center text-3xl mb-3 border border-purple-500/50">🔍</div>
+          <p class="text-xs text-purple-400 font-medium">CSCS</p>
           <p class="text-[10px] text-gray-500">Cyber Specialist</p>
         </div>
-        <div class="text-center opacity-40">
-          <div class="w-16 h-16 mx-auto bg-gray-700 rounded-2xl flex items-center justify-center text-3xl mb-3">4</div>
-          <p class="text-xs text-gray-400">CSCE</p>
+        <!-- CSCE -->
+        <div class="text-center">
+          <div id="cert4" class="w-16 h-16 mx-auto bg-red-500/10 rounded-2xl flex items-center justify-center text-3xl mb-3 border border-red-500/50">🏆</div>
+          <p class="text-xs text-red-400 font-medium">CSCE</p>
           <p class="text-[10px] text-gray-500">Cyber Elite</p>
         </div>
       </div>
       
-      <div class="mt-6 h-2 bg-gray-800 rounded-full overflow-hidden">
-        <div class="h-2 bg-gradient-to-r from-cyan-400 to-amber-400 w-1/4"></div>
+      <div class="mt-8 h-2 bg-gray-800 rounded-full overflow-hidden">
+        <div id="cert-progress" class="h-2 bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 w-1/4"></div>
       </div>
-      <p class="text-center text-xs text-gray-500 mt-2">25% Complete • Next: CSSO – Security Operator</p>
+      <p id="progress-text" class="text-center text-xs text-gray-500 mt-3">25% Complete • Next: CSSO – Security Operator</p>
     </div>
 
     <!-- Path Selection -->
-    <h3 class="text-2xl font-semibold mb-6">Choose Your Training Path</h3>
+    <h3 class="text-2xl font-semibold mb-8">Choose Your Training Path</h3>
     <div class="grid md:grid-cols-3 gap-8">
 
-      <!-- Red Team -->
+      <!-- Red Team Path -->
       <a href="/red-path.html" class="group">
-        <div class="bg-gray-900 border-2 border-red-600/30 hover:border-red-500 rounded-3xl p-8 transition-all h-full">
-          <div class="text-6xl mb-6">🔴</div>
-          <h4 class="text-3xl font-bold mb-3">Red Team</h4>
-          <p class="text-red-400 mb-6">Offensive • Ethical Hacking</p>
-          <p class="text-gray-400 text-sm leading-relaxed">Master reconnaissance, exploitation, credential attacks, and post-exploitation.</p>
+        <div class="bg-gray-900 border-2 border-red-600/40 hover:border-red-500 rounded-3xl p-10 transition-all h-full flex flex-col">
+          <div class="text-6xl mb-6">⚔️</div>
+          <h4 class="text-3xl font-bold mb-3 text-red-400">Red Team</h4>
+          <p class="text-red-400 text-sm mb-6">Offensive • Ethical Hacking</p>
+          <p class="text-gray-400 flex-1">Master reconnaissance, exploitation, credential attacks, and post-exploitation.</p>
           <div class="mt-10 text-cyan-400 font-medium group-hover:underline">Enter Red Path →</div>
         </div>
       </a>
 
-      <!-- Blue Team -->
+      <!-- Blue Team Path -->
       <a href="/blue-path.html" class="group">
-        <div class="bg-gray-900 border-2 border-blue-600/30 hover:border-blue-500 rounded-3xl p-8 transition-all h-full">
-          <div class="text-6xl mb-6">🔵</div>
-          <h4 class="text-3xl font-bold mb-3">Blue Team</h4>
-          <p class="text-blue-400 mb-6">Defensive • SOC Operations</p>
-          <p class="text-gray-400 text-sm leading-relaxed">Learn security monitoring, threat detection, and incident response.</p>
+        <div class="bg-gray-900 border-2 border-blue-600/40 hover:border-blue-500 rounded-3xl p-10 transition-all h-full flex flex-col">
+          <div class="text-6xl mb-6">🛡️</div>
+          <h4 class="text-3xl font-bold mb-3 text-blue-400">Blue Team</h4>
+          <p class="text-blue-400 text-sm mb-6">Defensive • SOC Operations</p>
+          <p class="text-gray-400 flex-1">Learn security monitoring, threat detection, and incident response.</p>
           <div class="mt-10 text-cyan-400 font-medium group-hover:underline">Enter Blue Path →</div>
         </div>
       </a>
 
-      <!-- Purple Team -->
+      <!-- Purple Team Path -->
       <a href="/purple-path.html" class="group">
-        <div class="bg-gray-900 border-2 border-purple-600/30 hover:border-purple-500 rounded-3xl p-8 transition-all h-full">
-          <div class="text-6xl mb-6">🟣</div>
-          <h4 class="text-3xl font-bold mb-3">Purple Team</h4>
-          <p class="text-purple-400 mb-6">Combined Offense + Defense</p>
-          <p class="text-gray-400 text-sm leading-relaxed">Attack and defend simultaneously. Optimize real security.</p>
+        <div class="bg-gray-900 border-2 border-purple-600/40 hover:border-purple-500 rounded-3xl p-10 transition-all h-full flex flex-col">
+          <div class="text-6xl mb-6">🔎</div>
+          <h4 class="text-3xl font-bold mb-3 text-purple-400">Purple Team</h4>
+          <p class="text-purple-400 text-sm mb-6">Combined Offense + Defense</p>
+          <p class="text-gray-400 flex-1">Attack and defend simultaneously. Optimize real security.</p>
           <div class="mt-10 text-cyan-400 font-medium group-hover:underline">Enter Purple Path →</div>
         </div>
       </a>
@@ -120,9 +124,7 @@
   </div>
 
   <script>
-      if (!firebase.apps.length) {
     firebase.initializeApp(window.firebaseConfig);
-  }
     const auth = firebase.auth();
 
     auth.onAuthStateChanged((user) => {
@@ -134,7 +136,7 @@
     });
 
     document.getElementById('logout-btn').addEventListener('click', () => {
-      auth.signOut().then(() => window.location.href = 'login.html');
+      auth.signOut().then(() => window.location.href = '/');
     });
   </script>
 
