@@ -106,8 +106,8 @@
         <a href="/labs/recon-mission-1.html" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-5 px-14 rounded-full text-xl transition">
           ← Previous Mission
         </a>
-        <a href="/recon-mission-3.html" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-5 px-14 rounded-full text-xl transition">
-         Continue to Mission 3→
+        <a href="/labs/recon-mission-3.html" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-5 px-14 rounded-full text-xl transition">
+          Continue to Mission 3 →
         </a>
       </div>
     </div>
@@ -124,7 +124,7 @@
     };
 
     let foundFlags = JSON.parse(localStorage.getItem('recon2_foundFlags')) || [];
-    let points = foundFlags.length * 25;   // Slightly higher points for Mission 2
+    let points = foundFlags.length * 25;
 
     window.onload = () => {
       updateProgress();
