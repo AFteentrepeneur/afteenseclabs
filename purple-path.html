@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Purple Team Path – AFTeen SecLabs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="/firebase-config.js"></script>
+</head>
+<body class="bg-gray-950 text-white min-h-screen p-6">
+
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-12">
+      <a href="/dashboard.html" class="text-cyan-400 hover:text-cyan-300 flex items-center text-lg font-medium">
+        ← Back to Dashboard
+      </a>
+      <h1 class="text-4xl font-bold text-purple-400">🟣 Purple Team Path</h1>
+      <div class="text-sm text-gray-400">Combined Offense + Defense • Security Optimization</div>
+    </div>
+
+    <div class="text-center mb-12">
+      <p class="text-2xl text-gray-300">This is not just another track.</p>
+      <p class="text-3xl font-bold text-purple-400 mt-4">This is a closed-loop security optimization system.</p>
+      <p class="text-lg text-gray-400 mt-6 max-w-2xl mx-auto">
+        Attack → Detect → Automate → Validate → Improve.<br>
+        The cycle that turns good security into elite security.
+      </p>
+    </div>
+
+    <!-- Tiered Progression -->
+    <div class="grid md:grid-cols-4 gap-6 mb-16">
+      <div class="bg-gray-900 rounded-3xl p-8 border border-emerald-600/30 text-center">
+        <div class="text-5xl mb-4">🛡️</div>
+        <h4 class="text-xl font-bold mb-1">Cadet</h4>
+        <p class="text-emerald-400 text-sm">Foundation</p>
+      </div>
+      <div class="bg-gray-900 rounded-3xl p-8 border border-blue-600/30 text-center">
+        <div class="text-5xl mb-4">⚔️</div>
+        <h4 class="text-xl font-bold mb-1">Operator</h4>
+        <p class="text-blue-400 text-sm">Execution</p>
+      </div>
+      <div class="bg-gray-900 rounded-3xl p-8 border border-purple-600/30 text-center">
+        <div class="text-5xl mb-4">🔍</div>
+        <h4 class="text-xl font-bold mb-1">Specialist</h4>
+        <p class="text-purple-400 text-sm">Advanced</p>
+      </div>
+      <div class="bg-gray-900 rounded-3xl p-8 border border-amber-600/30 text-center">
+        <div class="text-5xl mb-4">🏗️</div>
+        <h4 class="text-xl font-bold mb-1">Architect</h4>
+        <p class="text-amber-400 text-sm">Strategic</p>
+      </div>
+    </div>
+
+    <!-- Purple Team Modules -->
+    <h3 class="text-2xl font-semibold mb-8 text-center">Purple Team Modules</h3>
+
+    <div class="space-y-8">
+
+      <!-- Module 1: Adversary Simulation -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-purple-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">🎯</span>
+          <div>
+            <h4 class="text-2xl font-bold">1. Adversary Simulation</h4>
+            <p class="text-purple-400">Test reality, not assumptions</p>
+          </div>
+        </div>
+        <p class="text-gray-300 pl-12">
+          Run controlled attacks to expose how systems actually behave under real threat conditions.
+        </p>
+      </div>
+
+      <!-- Module 2: Detection Engineering -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-purple-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">📡</span>
+          <div>
+            <h4 class="text-2xl font-bold">2. Detection Engineering</h4>
+            <p class="text-purple-400">Turn noise into intelligence</p>
+          </div>
+        </div>
+        <p class="text-gray-300 pl-12">
+          Design systems that can identify malicious behavior accurately and quickly using SIEM rules, log analysis, and behavioral detection.
+        </p>
+      </div>
+
+      <!-- Module 3: Security Automation -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-purple-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">⚙️</span>
+          <div>
+            <h4 class="text-2xl font-bold">3. Security Automation</h4>
+            <p class="text-purple-400">Scale defense without scaling manpower</p>
+          </div>
+        </div>
+        <p class="text-gray-300 pl-12">
+          Automate detection, investigation, and response using scripting and SOAR workflows to reduce response time and human workload.
+        </p>
+      </div>
+
+      <!-- Module 4: Security Testing Frameworks -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-purple-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">📊</span>
+          <div>
+            <h4 class="text-2xl font-bold">4. Security Testing Frameworks</h4>
+            <p class="text-purple-400">Standardize and structure operations</p>
+          </div>
+        </div>
+        <p class="text-gray-300 pl-12">
+          Use industry-standard frameworks like MITRE ATT&CK, Atomic Red Team, and Caldera to guide attack simulation and detection validation.
+        </p>
+      </div>
+
+      <!-- Module 5: Security Metrics & Improvement -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-purple-600/30">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">📈</span>
+          <div>
+            <h4 class="text-2xl font-bold">5. Security Metrics & Improvement</h4>
+            <p class="text-purple-400">Measure performance and drive evolution</p>
+          </div>
+        </div>
+        <p class="text-gray-300 pl-12">
+          Track MTTD, MTTR, detection rate, and false positives to continuously improve security systems.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- The Purple Team Cycle -->
+    <div class="bg-gray-900 rounded-3xl p-10 mt-16 border border-purple-500/30">
+      <h3 class="text-2xl font-bold text-center mb-8">🔁 The Purple Team Cycle</h3>
+      <div class="text-center text-purple-300 text-lg leading-relaxed">
+        Adversary Simulation → Detection Engineering → Security Automation →<br>
+        Framework Validation → Metrics & Improvement → <span class="font-bold text-white">(Loop back stronger)</span>
+      </div>
+      <p class="text-center text-gray-400 mt-8">
+        This continuous loop is what turns good security into elite, evolving security.
+      </p>
+    </div>
+
+    <!-- Final Outcome -->
+    <div class="mt-16 bg-gray-900 rounded-3xl p-10 text-center">
+      <h3 class="text-2xl font-bold mb-6">🧠 Final Outcome</h3>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        By the end of the Purple Team Path, you will be able to simulate real-world attacks, 
+        build and tune detection systems, automate security operations, and continuously improve security performance.
+      </p>
+      <div class="mt-10 inline-block bg-purple-600 text-white font-medium px-10 py-4 rounded-full">
+        You won’t just find problems — you will evolve the system permanently.
+      </div>
+    </div>
+
+    <div class="text-center mt-20 text-gray-500 text-sm">
+      Purple Team modules unlock after completing both Red and Blue paths.
+    </div>
+
+  </div>
+
+</body>
+</html>
