@@ -8,6 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <style>
     .section { scroll-margin-top: 100px; }
+    .memory-cue { background: linear-gradient(90deg, #0ea5e9, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   </style>
 </head>
 <body class="bg-gray-950 text-white min-h-screen">
@@ -27,224 +28,146 @@
       <h1 class="text-4xl font-bold text-cyan-400">Module 1: Reconnaissance & OSINT</h1>
     </div>
 
-    <div class="text-center mb-12">
+    <!-- Immersive Opening -->
+    <div class="text-center mb-16">
       <p class="text-2xl text-gray-300">Before any attack begins, smart hackers do one thing first...</p>
-      <p class="text-5xl font-bold text-cyan-400 mt-4">They Recon.</p>
+      <p class="text-6xl font-bold text-cyan-400 mt-6 leading-tight">"They Recon."</p>
+      <p class="text-xl text-gray-400 mt-8 max-w-2xl mx-auto">
+        Information wins wars before they start.<br>
+        You are not a hacker yet.<br>
+        You are invisible. Watching. Learning.
+      </p>
     </div>
 
-    <!-- SECTION 1: Core Concept -->
-    <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec1">
+    <!-- Section 1: Core Concept -->
+    <div class="section bg-gray-900 rounded-3xl p-10 mb-12" id="sec1">
       <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
-        <span class="text-4xl">🔍</span> 1. Core Concept – What is Reconnaissance?
+        <span class="text-4xl">🔍</span> 1. Core Concept — What is Reconnaissance?
       </h2>
-      <p class="text-lg text-gray-300 leading-relaxed mb-6">
-        Reconnaissance is the **first and most important phase** of any cyber attack. 
-        It means gathering as much information as possible about the target **without touching their systems**.
-      </p>
       <p class="text-lg text-gray-300 leading-relaxed">
-        Think of it like a detective studying a house before breaking in. The better the reconnaissance, the easier and safer the attack becomes.
+        Reconnaissance is the **information gathering phase** of a cyber attack. 
+        Attackers collect data about a target **without touching their systems**.
       </p>
-      <div class="mt-8 bg-gray-800 p-6 rounded-2xl">
-        <strong class="text-cyan-400">Memory Cue:</strong> "R.E.C.O.N" = Research Everything Carefully Or Nothing works.
+      <p class="text-lg text-gray-300 mt-6">
+        This phase is silent, legal (when done ethically), and extremely powerful.
+      </p>
+      <div class="mt-8 bg-gray-800 p-6 rounded-2xl border-l-4 border-cyan-400">
+        <strong class="memory-cue text-xl">Memory Cue:</strong> "R.E.C.O.N" = Research Everything Carefully Or Nothing works.
       </div>
     </div>
 
-    <!-- RECON MISSION 1 LAB (Placed directly after Section 1 as requested) -->
-    <div class="section bg-gray-900 rounded-3xl p-8 mb-12 border border-cyan-500/30" id="mission1">
-      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
-        <span class="text-4xl">🎯</span> Your First Mission: Operation Silent Map
-      </h2>
-      <p class="text-gray-300 mb-6">
-        You are a junior penetration tester hired by <strong>ByteBrew Coffee</strong>. 
-        The company suspects attackers are mapping their infrastructure. Your job is to discover their digital footprint before the attackers do.
-      </p>
-      <a href="/labs/recon-mission-1.html" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-4 px-12 rounded-full text-xl transition">
-        Start Recon Mission 1 →
-      </a>
-    </div>
-
-    <!-- SECTION 2: Why Recon Matters -->
-    <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec2">
+    <!-- Section 2: Why Recon Matters -->
+    <div class="section bg-gray-900 rounded-3xl p-10 mb-12" id="sec2">
       <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
         <span class="text-4xl">🎯</span> 2. Why Recon Matters
       </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">80% of Success</strong><br>
-          Good reconnaissance determines most of an attack’s success rate.
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-800 p-8 rounded-2xl">
+          <div class="text-5xl mb-4">📊</div>
+          <h4 class="text-2xl font-semibold">80% of Success</h4>
+          <p class="text-gray-400 mt-4">Good reconnaissance determines most of an attack’s success rate.</p>
         </div>
-        <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">Low Risk</strong><br>
-          Passive recon is usually legal and very hard to detect.
+        <div class="bg-gray-800 p-8 rounded-2xl">
+          <div class="text-5xl mb-4">🛡️</div>
+          <h4 class="text-2xl font-semibold">Low Risk</h4>
+          <p class="text-gray-400 mt-4">Passive recon is usually legal and very hard to detect.</p>
         </div>
       </div>
-      <p class="mt-6 text-gray-300">
-        Most companies are not hacked because of fancy tools. They are hacked because attackers knew exactly where to look.
+      <p class="mt-10 text-gray-300 text-lg">
+        Most companies are not hacked because of fancy exploits.<br>
+        They are hacked because attackers <strong>knew exactly where to look</strong>.
       </p>
     </div>
 
-    <!-- SECTION 3: Skills Students Must Learn -->
-    <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec3">
+    <!-- Section 3: The Attacker’s Intelligence Framework -->
+    <div class="section bg-gray-900 rounded-3xl p-10 mb-12" id="sec3">
       <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
-        <span class="text-4xl">🛠️</span> 3. Skills You Will Master
-      </h2>
-      <div class="space-y-8">
-        <div class="flex gap-6">
-          <div class="text-5xl">🌐</div>
-          <div>
-            <h4 class="font-semibold text-xl">OSINT (Open Source Intelligence)</h4>
-            <p class="text-gray-400">Gathering information from public sources like search engines, social media, and company websites.</p>
-          </div>
-        </div>
-        <div class="flex gap-6">
-          <div class="text-5xl">📍</div>
-          <div>
-            <h4 class="font-semibold text-xl">Domain & Subdomain Enumeration</h4>
-            <p class="text-gray-400">Finding all domains and hidden subdomains (dev, admin, api, etc.).</p>
-          </div>
-        </div>
-        <div class="flex gap-6">
-          <div class="text-5xl">📄</div>
-          <div>
-            <h4 class="font-semibold text-xl">Metadata Extraction</h4>
-            <p class="text-gray-400">Pulling hidden data from PDFs and documents (usernames, software versions, etc.).</p>
-          </div>
-        </div>
-        <div class="flex gap-6">
-          <div class="text-5xl">👥</div>
-          <div>
-            <h4 class="font-semibold text-xl">Social Media Intelligence</h4>
-            <p class="text-gray-400">Analyzing employee posts to discover internal tools and technologies.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION 4: Tools Students Will Learn -->
-    <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec4">
-      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
-        <span class="text-4xl">🔧</span> 4. Tools You Will Learn
+        <span class="text-4xl">🧩</span> 3. The 5 Intelligence Pillars
       </h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">Maltego</strong><br>
-          Graph-based tool for mapping relationships and discovering domains.
+          <strong class="text-cyan-400">1. Assets</strong><br>
+          What exists? Domains, servers, applications.
         </div>
         <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">Recon-ng</strong><br>
-          Powerful framework for automated OSINT.
+          <strong class="text-cyan-400">2. People</strong><br>
+          Who operates it? Employees, admins, developers.
         </div>
         <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">theHarvester</strong><br>
-          Finds emails, subdomains, and hosts from public sources.
+          <strong class="text-cyan-400">3. Technology</strong><br>
+          What powers it? Frameworks, cloud providers.
         </div>
         <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">Amass</strong><br>
-          Advanced tool for discovering hidden subdomains.
+          <strong class="text-cyan-400">4. Exposure</strong><br>
+          What is visible? Public endpoints, open ports.
+        </div>
+        <div class="bg-gray-800 p-6 rounded-2xl md:col-span-2">
+          <strong class="text-cyan-400">5. Weakness Indicators</strong><br>
+          Where are cracks forming? Outdated systems, misconfigurations.
         </div>
       </div>
     </div>
 
-    <!-- SECTION 5: Real-World Example -->
-    <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec5">
+    <!-- Section 4: Skills Students Must Learn -->
+    <div class="section bg-gray-900 rounded-3xl p-10 mb-12" id="sec4">
       <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
-        <span class="text-4xl">📖</span> 5. Real-World Example
+        <span class="text-4xl">🛠️</span> 4. Core Skills You Will Master
+      </h2>
+      <div class="space-y-10">
+        <div class="flex gap-8">
+          <div class="text-6xl flex-shrink-0">🌐</div>
+          <div>
+            <h4 class="text-2xl font-semibold">OSINT (Open Source Intelligence)</h4>
+            <p class="text-gray-400">Gathering intelligence from public sources — search engines, social media, documents.</p>
+          </div>
+        </div>
+        <div class="flex gap-8">
+          <div class="text-6xl flex-shrink-0">📍</div>
+          <div>
+            <h4 class="text-2xl font-semibold">Domain & Subdomain Enumeration</h4>
+            <p class="text-gray-400">Finding main domains and hidden subdomains like dev, admin, api, vpn.</p>
+          </div>
+        </div>
+        <div class="flex gap-8">
+          <div class="text-6xl flex-shrink-0">📄</div>
+          <div>
+            <h4 class="text-2xl font-semibold">Metadata Extraction</h4>
+            <p class="text-gray-400">Pulling hidden data from PDFs — authors, software, internal paths.</p>
+          </div>
+        </div>
+        <div class="flex gap-8">
+          <div class="text-6xl flex-shrink-0">👥</div>
+          <div>
+            <h4 class="text-2xl font-semibold">Social Media Intelligence</h4>
+            <p class="text-gray-400">Analyzing employee posts to discover tools, projects, and internal systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: Real-World Attack Example + Transition -->
+    <div class="section bg-gray-900 rounded-3xl p-10 mb-12" id="sec5">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">📖</span> 5. Real-World Attack Chain
       </h2>
       <p class="text-lg text-gray-300 leading-relaxed">
-        A famous breach started with simple reconnaissance. The attacker found <code>vpn.company.com</code> using public tools. 
-        From LinkedIn, they identified IT staff. They then sent targeted phishing emails. 
+        A famous breach started with simple recon. The attacker found <code>vpn.company.com</code>.<br>
+        From LinkedIn, they identified IT staff. They sent targeted phishing emails.<br>
         This led to initial access and eventually a full network breach.
       </p>
-      <p class="mt-6 text-gray-400">
-        <strong>Memory Cue:</strong> "No recon = No direction. Good recon = Easy victory."
-      </p>
-    </div>
-
-    <!-- Interactive Quiz -->
-    <div class="bg-gray-900 rounded-3xl p-8 border border-cyan-900/30" id="quiz">
-      <h2 class="text-3xl font-bold text-center mb-8">Quick Knowledge Check 🎯</h2>
-      <div id="quiz-questions" class="space-y-10"></div>
-      <div id="quiz-result" class="hidden text-center mt-12"></div>
+      <div class="mt-10 bg-gray-800 p-6 rounded-2xl border-l-4 border-red-500">
+        <strong class="text-red-400">Memory Cue:</strong> "No recon = No direction. Good recon = Easy victory."
+      </div>
     </div>
 
     <!-- Start Lab Button -->
-    <div id="start-lab-btn" class="hidden text-center mt-12">
-      <a href="/labs/recon-mission-1.html" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-5 px-16 rounded-full text-2xl transition">
+    <div class="text-center mt-16">
+      <a href="/labs/recon-mission-1.html" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-6 px-20 rounded-full text-3xl transition">
         Start Recon Mission 1 →
       </a>
     </div>
 
   </div>
-
-  <script>
-    // Progress Bar
-    window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById("progress-bar").style.width = scrolled + "%";
-    });
-
-    // Quiz Data
-    const quizData = [
-      { q: "What does OSINT stand for?", a: "Open Source Intelligence", options: ["Online Security Intelligence", "Open Source Intelligence", "Official System Investigation Tool"] },
-      { q: "Which type of recon is safer for beginners?", a: "Passive Recon", options: ["Active Recon", "Passive Recon", "Brute Force"] },
-      { q: "What can public PDFs often leak?", a: "Employee names and software versions", options: ["Nothing useful", "Employee names and software versions", "Only pictures"] },
-      { q: "Why is subdomain discovery important?", a: "Hidden services often live there", options: ["It is not important", "Hidden services often live there", "It slows down attacks"] },
-      { q: "What is the main goal of reconnaissance?", a: "To gather information without being noticed", options: ["To install malware", "To gather information without being noticed", "To delete logs"] }
-    ];
-
-    let score = 0;
-    const quizContainer = document.getElementById('quiz-questions');
-
-    quizData.forEach((item, index) => {
-      const qDiv = document.createElement('div');
-      qDiv.className = "bg-gray-800 p-6 rounded-2xl";
-      qDiv.innerHTML = `
-        <p class="font-semibold mb-4 text-lg">${index + 1}. ${item.q}</p>
-        <div class="space-y-3" id="q-options-${index}"></div>
-      `;
-      quizContainer.appendChild(qDiv);
-
-      const optionsDiv = document.getElementById(`q-options-${index}`);
-      item.options.forEach((opt, i) => {
-        const btn = document.createElement('button');
-        btn.className = "w-full text-left p-4 bg-gray-700 hover:bg-gray-600 rounded-xl transition";
-        btn.textContent = opt;
-        btn.onclick = () => {
-          if (opt === item.a) {
-            btn.classList.add('bg-green-600', 'text-white');
-            score++;
-          } else {
-            btn.classList.add('bg-red-600', 'text-white');
-          }
-          optionsDiv.querySelectorAll('button').forEach(b => b.disabled = true);
-        };
-        optionsDiv.appendChild(btn);
-      });
-    });
-
-    const checkInterval = setInterval(() => {
-      if (document.querySelectorAll('button[disabled]').length === quizData.length * quizData[0].options.length) {
-        clearInterval(checkInterval);
-        const resultDiv = document.getElementById('quiz-result');
-        resultDiv.classList.remove('hidden');
-        resultDiv.innerHTML = `
-          <h3 class="text-4xl font-bold text-cyan-400 mb-6">Quiz Complete! You scored ${score}/5</h3>
-          <p class="text-xl text-gray-300 mb-8">Excellent! You now understand the foundation of reconnaissance.</p>
-          <button onclick="startMission()" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-5 px-16 rounded-full text-2xl transition">
-            Start Recon Mission 1 →
-          </button>
-        `;
-        if (score >= 4) confetti({ particleCount: 150, spread: 80 });
-      }
-    }, 800);
-
-    function startMission() {
-      document.getElementById('start-lab-btn').classList.remove('hidden');
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
-  </script>
 
 </body>
 </html>
