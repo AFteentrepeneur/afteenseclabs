@@ -6,10 +6,6 @@
   <title>Academy: Module 1 - Reconnaissance & OSINT | AFTeen SecLabs</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-  <style>
-    .section { scroll-margin-top: 100px; }
-    .memory-cue { background: linear-gradient(90deg, #0ea5e9, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  </style>
 </head>
 <body class="bg-gray-950 text-white min-h-screen">
 
@@ -25,146 +21,210 @@
       <a href="/red-path.html" class="text-cyan-400 hover:text-cyan-300 flex items-center text-lg font-medium">
         ← Back to Red Team Path
       </a>
-      <h1 class="text-4xl font-bold text-cyan-400">Module 1: Reconnaissance & OSINT</h1>
+      <h1 class="text-4xl font-bold text-cyan-400">Module 1: Reconnaissance & Intelligence Gathering</h1>
     </div>
 
-    <!-- Immersive Opening -->
-    <div class="text-center mb-16">
-      <p class="text-2xl text-gray-300">Before any attack begins, smart hackers do one thing first...</p>
-      <p class="text-6xl font-bold text-cyan-400 mt-6 leading-tight">"They Recon."</p>
-      <p class="text-xl text-gray-400 mt-8 max-w-2xl mx-auto">
-        Information wins wars before they start.<br>
+    <div class="text-center mb-12">
+      <p class="text-2xl text-gray-300">🧠 “Information Wins Wars Before They Start.”</p>
+    </div>
+
+    <!-- SECTION 0 — IMMERSIVE OPENING -->
+    <div class="bg-gray-900 rounded-3xl p-10 mb-12">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🎬</span> SECTION 0 — IMMERSIVE OPENING
+      </h2>
+      <p class="text-lg text-gray-300 leading-relaxed">
         You are not a hacker yet.<br>
-        You are invisible. Watching. Learning.
+        You are invisible. Unknown. Watching.<br><br>
+        A company exists.<br>
+        They have: Employees, Servers, Emails, Systems, Weaknesses.<br><br>
+        They believe they are secure.<br>
+        You haven’t touched their system.<br>
+        Yet… you already know: Their internal tools, Their employee structure, Their exposed endpoints, Their likely entry point.
+      </p>
+      <p class="mt-8 text-xl font-semibold text-cyan-400">
+        💥 This is reconnaissance.<br>
+        The phase where attackers win before the attack even begins.
       </p>
     </div>
 
-    <!-- Section 1: Core Concept -->
-    <div class="section bg-gray-900 rounded-3xl p-10 mb-12" id="sec1">
+    <!-- SECTION 1 — REFRAMING RECON -->
+    <div class="bg-gray-900 rounded-3xl p-10 mb-12">
       <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
-        <span class="text-4xl">🔍</span> 1. Core Concept — What is Reconnaissance?
+        <span class="text-4xl">🎯</span> SECTION 1 — REFRAMING RECON
       </h2>
-      <p class="text-lg text-gray-300 leading-relaxed">
-        Reconnaissance is the **information gathering phase** of a cyber attack. 
-        Attackers collect data about a target **without touching their systems**.
+      <p class="text-lg text-gray-300">
+        Most beginners think: “Recon is just gathering information.”<br>
+        ❌ Wrong.
       </p>
+      <p class="text-xl font-semibold mt-6">
+        🧠 Real Definition:<br>
+        Reconnaissance is strategic intelligence acquisition for precision exploitation.
+      </p>
+      <p class="mt-8">
+        🔥 What You Are Actually Building:
+      </p>
+      <ul class="list-disc pl-8 space-y-2 text-gray-300">
+        <li>A target profile</li>
+        <li>An attack blueprint</li>
+        <li>A decision advantage</li>
+      </ul>
+      <p class="mt-8 text-red-400 font-medium">
+        ⚠️ Brutal Reality: 80% of successful breaches are predictable — because recon exposed everything.
+      </p>
+    </div>
+
+    <!-- SECTION 2 — THE ATTACKER’S INTELLIGENCE FRAMEWORK -->
+    <div class="bg-gray-900 rounded-3xl p-10 mb-12">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🧭</span> SECTION 2 — THE ATTACKER’S INTELLIGENCE FRAMEWORK
+      </h2>
+      <p class="text-lg text-gray-300">
+        Elite attackers don’t “look around.” They operate with a structured model.
+      </p>
+      <div class="mt-8">
+        <strong class="text-cyan-400">The 5 Intelligence Pillars</strong>
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+          <div><strong>1. Assets</strong><br>What exists? Domains, Servers, Applications</div>
+          <div><strong>2. People</strong><br>Who operates it? Employees, Admins, Developers</div>
+          <div><strong>3. Technology</strong><br>What powers it? Frameworks, Cloud providers, Software stacks</div>
+          <div><strong>4. Exposure</strong><br>What is visible? Public endpoints, Open ports, Leaked data</div>
+          <div><strong>5. Weakness Indicators</strong><br>Where are cracks forming? Outdated systems, Misconfigurations, Human mistakes</div>
+        </div>
+      </div>
+      <p class="mt-10 text-gray-400">
+        💡 This is how professionals think. Not randomly. Not emotionally. Systematically.
+      </p>
+    </div>
+
+    <!-- SECTION 3 — PASSIVE RECON -->
+    <div class="bg-gray-900 rounded-3xl p-10 mb-12">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🟢</span> SECTION 3 — PASSIVE RECON (Silent Dominance)
+      </h2>
+      <p class="text-lg text-gray-300">
+        Extract maximum intelligence without alerting the target.<br>
+        🧬 Mindset Shift: You are not “searching.” You are investigating patterns.
+      </p>
+      <div class="mt-8 space-y-8">
+        <div>
+          <strong class="text-cyan-400">🌐 Search Engine Intelligence (Google Dorking)</strong><br>
+          Examples:<br>
+          <code>site:target.com filetype:pdf</code><br>
+          <code>intitle:"index of" "backup"</code><br>
+          Finds: Hidden directories, Exposed files, Sensitive documents.
+        </div>
+        <div>
+          <strong class="text-cyan-400">📱 Social Media Profiling</strong><br>
+          Extract: Email formats, Internal tools, Project names, Organizational structure.<br>
+          Example: “Excited to deploy our new AWS Kubernetes cluster!” → Cloud = AWS, Infrastructure = Kubernetes.
+        </div>
+        <div>
+          <strong class="text-cyan-400">📄 Document Intelligence</strong><br>
+          Attackers extract: Authors, Software used, Internal naming conventions.<br>
+          This feeds username discovery, password guessing, system identification.
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4 — ACTIVE RECON -->
+    <div class="bg-gray-900 rounded-3xl p-10 mb-12">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🔴</span> SECTION 4 — ACTIVE RECON (Controlled Contact)
+      </h2>
+      <p class="text-lg text-gray-300">
+        Carefully interact with systems to validate assumptions.<br>
+        ⚠️ Risk Layer: Logged, Detected, Blocked.<br>
+        Activities: DNS queries, Subdomain probing, Service discovery.
+      </p>
+      <p class="mt-6 text-gray-400">
+        Strategic Rule: Passive tells you what might exist. Active confirms what actually exists.
+      </p>
+    </div>
+
+    <!-- SECTION 5 — DOMAIN & INFRASTRUCTURE MAPPING -->
+    <div class="bg-gray-900 rounded-3xl p-10 mb-12">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🌐</span> SECTION 5 — DOMAIN & INFRASTRUCTURE MAPPING
+      </h2>
+      <p class="text-lg text-gray-300">
+        Step 1: Domain Expansion — Companies rarely operate one domain.<br>
+        Example: target.com, target.net, target.org<br><br>
+        Step 2: Subdomain Explosion — Realistic Structure: dev.target.com, staging.target.com, vpn.target.com, admin.target.com, api.target.com
+      </p>
+      <p class="mt-6 text-red-400">
+        💥 Most breaches start from: dev.target.com
+      </p>
+    </div>
+
+    <!-- SECTION 6 — HUMAN INTELLIGENCE -->
+    <div class="bg-gray-900 rounded-3xl p-10 mb-12">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🧑‍💼</span> SECTION 6 — HUMAN INTELLIGENCE (THE BIGGEST WEAKNESS)
+      </h2>
+      <p class="text-lg text-gray-300">
+        Humans leak more than systems.<br>
+        Example LinkedIn post: “Pushed new update using Jenkins on AWS!”<br>
+        Intelligence Extracted: CI/CD = Jenkins, Cloud = AWS, Pipeline = Automated.
+      </p>
+    </div>
+
+    <!-- SECTION 7 — METADATA -->
+    <div class="bg-gray-900 rounded-3xl p-10 mb-12">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">📄</span> SECTION 7 — METADATA: THE INVISIBLE LEAK
+      </h2>
+      <p class="text-lg text-gray-300">
+        Files carry hidden intelligence.<br>
+        Example: Report.pdf<br>
+        Hidden Data: Author: admin-user, System: Windows 11, Software: Word 2019.
+      </p>
+    </div>
+
+    <!-- SECTION 8 — TOOLS -->
+    <div class="bg-gray-900 rounded-3xl p-10 mb-12">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🛠️</span> SECTION 8 — TOOLS (BUT USED LIKE A PROFESSIONAL)
+      </h2>
+      <p class="text-lg text-gray-300">
+        Tools don’t make you elite. Thinking does.<br><br>
+        Tool + Strategy Pairing:<br>
+        Maltego — Relationship mapping<br>
+        Recon-ng — Automated intelligence gathering<br>
+        theHarvester — Email harvesting<br>
+        Amass — Deep infrastructure discovery
+      </p>
+    </div>
+
+    <!-- SECTION 9 — REAL ATTACK CHAIN -->
+    <div class="bg-gray-900 rounded-3xl p-10 mb-12">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">💣</span> SECTION 9 — REAL ATTACK CHAIN (FULL BREAKDOWN)
+      </h2>
+      <p class="text-lg text-gray-300">
+        Phase 1 — Recon: Attacker finds vpn.company.com<br>
+        Phase 2 — Human Mapping: From LinkedIn, IT Administrator identified<br>
+        Phase 3 — Weaponization: Craft phishing email<br>
+        Phase 4 — Exploitation: Employee clicks, Credentials captured<br>
+        Phase 5 — Access: VPN login, Internal network entry
+      </p>
+    </div>
+
+    <!-- SECTION 10 — CYBERRANGE LAB -->
+    <div class="bg-gray-900 rounded-3xl p-10 mb-12">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🎮</span> SECTION 10 — CYBERRANGE LAB (UPGRADED EXPERIENCE)
+      </h2>
+      <h3 class="text-2xl font-semibold">Operation Silent Map — FULL IMMERSION</h3>
       <p class="text-lg text-gray-300 mt-6">
-        This phase is silent, legal (when done ethically), and extremely powerful.
+        ByteBrew Coffee is expanding rapidly. Someone is already mapping their entire infrastructure.<br>
+        Your job: Think like the attacker before the attacker strikes.
       </p>
-      <div class="mt-8 bg-gray-800 p-6 rounded-2xl border-l-4 border-cyan-400">
-        <strong class="memory-cue text-xl">Memory Cue:</strong> "R.E.C.O.N" = Research Everything Carefully Or Nothing works.
+      <div class="mt-10">
+        <a href="/labs/recon-mission-1.html" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-5 px-16 rounded-full text-2xl transition">
+          Start Recon Mission 1 →
+        </a>
       </div>
-    </div>
-
-    <!-- Section 2: Why Recon Matters -->
-    <div class="section bg-gray-900 rounded-3xl p-10 mb-12" id="sec2">
-      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
-        <span class="text-4xl">🎯</span> 2. Why Recon Matters
-      </h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-gray-800 p-8 rounded-2xl">
-          <div class="text-5xl mb-4">📊</div>
-          <h4 class="text-2xl font-semibold">80% of Success</h4>
-          <p class="text-gray-400 mt-4">Good reconnaissance determines most of an attack’s success rate.</p>
-        </div>
-        <div class="bg-gray-800 p-8 rounded-2xl">
-          <div class="text-5xl mb-4">🛡️</div>
-          <h4 class="text-2xl font-semibold">Low Risk</h4>
-          <p class="text-gray-400 mt-4">Passive recon is usually legal and very hard to detect.</p>
-        </div>
-      </div>
-      <p class="mt-10 text-gray-300 text-lg">
-        Most companies are not hacked because of fancy exploits.<br>
-        They are hacked because attackers <strong>knew exactly where to look</strong>.
-      </p>
-    </div>
-
-    <!-- Section 3: The Attacker’s Intelligence Framework -->
-    <div class="section bg-gray-900 rounded-3xl p-10 mb-12" id="sec3">
-      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
-        <span class="text-4xl">🧩</span> 3. The 5 Intelligence Pillars
-      </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">1. Assets</strong><br>
-          What exists? Domains, servers, applications.
-        </div>
-        <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">2. People</strong><br>
-          Who operates it? Employees, admins, developers.
-        </div>
-        <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">3. Technology</strong><br>
-          What powers it? Frameworks, cloud providers.
-        </div>
-        <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong class="text-cyan-400">4. Exposure</strong><br>
-          What is visible? Public endpoints, open ports.
-        </div>
-        <div class="bg-gray-800 p-6 rounded-2xl md:col-span-2">
-          <strong class="text-cyan-400">5. Weakness Indicators</strong><br>
-          Where are cracks forming? Outdated systems, misconfigurations.
-        </div>
-      </div>
-    </div>
-
-    <!-- Section 4: Skills Students Must Learn -->
-    <div class="section bg-gray-900 rounded-3xl p-10 mb-12" id="sec4">
-      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
-        <span class="text-4xl">🛠️</span> 4. Core Skills You Will Master
-      </h2>
-      <div class="space-y-10">
-        <div class="flex gap-8">
-          <div class="text-6xl flex-shrink-0">🌐</div>
-          <div>
-            <h4 class="text-2xl font-semibold">OSINT (Open Source Intelligence)</h4>
-            <p class="text-gray-400">Gathering intelligence from public sources — search engines, social media, documents.</p>
-          </div>
-        </div>
-        <div class="flex gap-8">
-          <div class="text-6xl flex-shrink-0">📍</div>
-          <div>
-            <h4 class="text-2xl font-semibold">Domain & Subdomain Enumeration</h4>
-            <p class="text-gray-400">Finding main domains and hidden subdomains like dev, admin, api, vpn.</p>
-          </div>
-        </div>
-        <div class="flex gap-8">
-          <div class="text-6xl flex-shrink-0">📄</div>
-          <div>
-            <h4 class="text-2xl font-semibold">Metadata Extraction</h4>
-            <p class="text-gray-400">Pulling hidden data from PDFs — authors, software, internal paths.</p>
-          </div>
-        </div>
-        <div class="flex gap-8">
-          <div class="text-6xl flex-shrink-0">👥</div>
-          <div>
-            <h4 class="text-2xl font-semibold">Social Media Intelligence</h4>
-            <p class="text-gray-400">Analyzing employee posts to discover tools, projects, and internal systems.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section 5: Real-World Attack Example + Transition -->
-    <div class="section bg-gray-900 rounded-3xl p-10 mb-12" id="sec5">
-      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
-        <span class="text-4xl">📖</span> 5. Real-World Attack Chain
-      </h2>
-      <p class="text-lg text-gray-300 leading-relaxed">
-        A famous breach started with simple recon. The attacker found <code>vpn.company.com</code>.<br>
-        From LinkedIn, they identified IT staff. They sent targeted phishing emails.<br>
-        This led to initial access and eventually a full network breach.
-      </p>
-      <div class="mt-10 bg-gray-800 p-6 rounded-2xl border-l-4 border-red-500">
-        <strong class="text-red-400">Memory Cue:</strong> "No recon = No direction. Good recon = Easy victory."
-      </div>
-    </div>
-
-    <!-- Start Lab Button -->
-    <div class="text-center mt-16">
-      <a href="/labs/recon-mission-1.html" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-6 px-20 rounded-full text-3xl transition">
-        Start Recon Mission 1 →
-      </a>
     </div>
 
   </div>
