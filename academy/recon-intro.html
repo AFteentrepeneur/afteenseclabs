@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Academy: Reconnaissance & OSINT | AFTeen SecLabs</title>
+  <title>Academy: Module 1 - Reconnaissance & OSINT | AFTeen SecLabs</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <style>
-    .section { scroll-margin-top: 80px; }
+    .section { scroll-margin-top: 100px; }
   </style>
 </head>
 <body class="bg-gray-950 text-white min-h-screen">
@@ -19,11 +19,11 @@
 
   <div class="max-w-4xl mx-auto p-6 pt-16">
 
+    <!-- Header -->
     <div class="flex items-center justify-between mb-10">
-      <a href="red-path.html" class="text-cyan-400 hover:text-cyan-300 flex items-center text-lg">← Back To Module</a>
-   </div>
-
-    <div class="text-5xl font-bold text-cyan-400 mt-4>
+      <a href="/red-path.html" class="text-cyan-400 hover:text-cyan-300 flex items-center text-lg font-medium">
+        ← Back to Red Team Path
+      </a>
       <h1 class="text-4xl font-bold text-cyan-400">Module 1: Reconnaissance & OSINT</h1>
     </div>
 
@@ -32,60 +32,132 @@
       <p class="text-5xl font-bold text-cyan-400 mt-4">They Recon.</p>
     </div>
 
-    <!-- Section 1 -->
+    <!-- SECTION 1: Core Concept -->
     <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec1">
       <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
-        <span class="text-4xl">🔍</span> What is Reconnaissance?
+        <span class="text-4xl">🔍</span> 1. Core Concept – What is Reconnaissance?
       </h2>
-      <p class="text-lg text-gray-300 leading-relaxed">
-        Reconnaissance is the **information gathering phase**. Attackers collect data about a target without touching the system. 
-        This phase is silent, legal (if done ethically), and extremely powerful.
+      <p class="text-lg text-gray-300 leading-relaxed mb-6">
+        Reconnaissance is the **first and most important phase** of any cyber attack. 
+        It means gathering as much information as possible about the target **without touching their systems**.
       </p>
-    </div>
-
-    <!-- Section 2 -->
-    <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec2">
-      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
-        <span class="text-4xl">🎯</span> Why Recon Matters
-      </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong>80% of success</strong><br>
-          Good recon determines most of an attack’s success.
-        </div>
-        <div class="bg-gray-800 p-6 rounded-2xl">
-          <strong>Low risk</strong><br>
-          Passive recon is usually legal and hard to detect.
-        </div>
+      <p class="text-lg text-gray-300 leading-relaxed">
+        Think of it like a detective studying a house before breaking in. The better the reconnaissance, the easier and safer the attack becomes.
+      </p>
+      <div class="mt-8 bg-gray-800 p-6 rounded-2xl">
+        <strong class="text-cyan-400">Memory Cue:</strong> "R.E.C.O.N" = Research Everything Carefully Or Nothing works.
       </div>
     </div>
 
-    <!-- Section 3 -->
+    <!-- RECON MISSION 1 LAB (Placed directly after Section 1 as requested) -->
+    <div class="section bg-gray-900 rounded-3xl p-8 mb-12 border border-cyan-500/30" id="mission1">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🎯</span> Your First Mission: Operation Silent Map
+      </h2>
+      <p class="text-gray-300 mb-6">
+        You are a junior penetration tester hired by <strong>ByteBrew Coffee</strong>. 
+        The company suspects attackers are mapping their infrastructure. Your job is to discover their digital footprint before the attackers do.
+      </p>
+      <a href="/labs/recon-mission-1.html" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-4 px-12 rounded-full text-xl transition">
+        Start Recon Mission 1 →
+      </a>
+    </div>
+
+    <!-- SECTION 2: Why Recon Matters -->
+    <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec2">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🎯</span> 2. Why Recon Matters
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-800 p-6 rounded-2xl">
+          <strong class="text-cyan-400">80% of Success</strong><br>
+          Good reconnaissance determines most of an attack’s success rate.
+        </div>
+        <div class="bg-gray-800 p-6 rounded-2xl">
+          <strong class="text-cyan-400">Low Risk</strong><br>
+          Passive recon is usually legal and very hard to detect.
+        </div>
+      </div>
+      <p class="mt-6 text-gray-300">
+        Most companies are not hacked because of fancy tools. They are hacked because attackers knew exactly where to look.
+      </p>
+    </div>
+
+    <!-- SECTION 3: Skills Students Must Learn -->
     <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec3">
-      <h2 class="text-3xl font-bold mb-6">Key Skills You Will Master</h2>
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🛠️</span> 3. Skills You Will Master
+      </h2>
       <div class="space-y-8">
         <div class="flex gap-6">
           <div class="text-5xl">🌐</div>
           <div>
+            <h4 class="font-semibold text-xl">OSINT (Open Source Intelligence)</h4>
+            <p class="text-gray-400">Gathering information from public sources like search engines, social media, and company websites.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="text-5xl">📍</div>
+          <div>
             <h4 class="font-semibold text-xl">Domain & Subdomain Enumeration</h4>
-            <p class="text-gray-400">Finding all websites and hidden services belonging to a company.</p>
+            <p class="text-gray-400">Finding all domains and hidden subdomains (dev, admin, api, etc.).</p>
           </div>
         </div>
         <div class="flex gap-6">
           <div class="text-5xl">📄</div>
           <div>
             <h4 class="font-semibold text-xl">Metadata Extraction</h4>
-            <p class="text-gray-400">Pulling hidden information from public documents (PDFs, Word files).</p>
+            <p class="text-gray-400">Pulling hidden data from PDFs and documents (usernames, software versions, etc.).</p>
           </div>
         </div>
         <div class="flex gap-6">
           <div class="text-5xl">👥</div>
           <div>
             <h4 class="font-semibold text-xl">Social Media Intelligence</h4>
-            <p class="text-gray-400">Profiling employees and discovering leaked tech details.</p>
+            <p class="text-gray-400">Analyzing employee posts to discover internal tools and technologies.</p>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- SECTION 4: Tools Students Will Learn -->
+    <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec4">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">🔧</span> 4. Tools You Will Learn
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-800 p-6 rounded-2xl">
+          <strong class="text-cyan-400">Maltego</strong><br>
+          Graph-based tool for mapping relationships and discovering domains.
+        </div>
+        <div class="bg-gray-800 p-6 rounded-2xl">
+          <strong class="text-cyan-400">Recon-ng</strong><br>
+          Powerful framework for automated OSINT.
+        </div>
+        <div class="bg-gray-800 p-6 rounded-2xl">
+          <strong class="text-cyan-400">theHarvester</strong><br>
+          Finds emails, subdomains, and hosts from public sources.
+        </div>
+        <div class="bg-gray-800 p-6 rounded-2xl">
+          <strong class="text-cyan-400">Amass</strong><br>
+          Advanced tool for discovering hidden subdomains.
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: Real-World Example -->
+    <div class="section bg-gray-900 rounded-3xl p-8 mb-12" id="sec5">
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-4">
+        <span class="text-4xl">📖</span> 5. Real-World Example
+      </h2>
+      <p class="text-lg text-gray-300 leading-relaxed">
+        A famous breach started with simple reconnaissance. The attacker found <code>vpn.company.com</code> using public tools. 
+        From LinkedIn, they identified IT staff. They then sent targeted phishing emails. 
+        This led to initial access and eventually a full network breach.
+      </p>
+      <p class="mt-6 text-gray-400">
+        <strong>Memory Cue:</strong> "No recon = No direction. Good recon = Easy victory."
+      </p>
     </div>
 
     <!-- Interactive Quiz -->
@@ -105,7 +177,7 @@
   </div>
 
   <script>
-    // Progress bar
+    // Progress Bar
     window.addEventListener('scroll', () => {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -123,7 +195,6 @@
     ];
 
     let score = 0;
-
     const quizContainer = document.getElementById('quiz-questions');
 
     quizData.forEach((item, index) => {
@@ -153,9 +224,8 @@
       });
     });
 
-    // Check if quiz is complete
     const checkInterval = setInterval(() => {
-      if (document.querySelectorAll('button[disabled]').length === quizData.length * 3) {
+      if (document.querySelectorAll('button[disabled]').length === quizData.length * quizData[0].options.length) {
         clearInterval(checkInterval);
         const resultDiv = document.getElementById('quiz-result');
         resultDiv.classList.remove('hidden');
