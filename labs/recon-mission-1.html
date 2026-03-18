@@ -17,8 +17,8 @@
         ← Back to Academy Lesson
       </a>
       <h1 class="text-3xl font-bold text-cyan-400">Recon Mission 1: Operation Silent Map</h1>
-      <a href="/dashboard.html" class="text-gray-400 hover:text-gray-300 flex items-center font-medium">
-        Dashboard →
+      <a href="/labs/recon-mission-2.html" class="text-gray-400 hover:text-gray-300 flex items-center font-medium">
+        Mission 2 →
       </a>
     </div>
 
@@ -106,8 +106,8 @@
         <a href="/academy/recon-intro.html" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-5 px-14 rounded-full text-xl transition">
           ← Back to Lesson
         </a>
-        <a href="/dashboard.html" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-5 px-14 rounded-full text-xl transition">
-          Return to Dashboard →
+        <a href="/labs/recon-mission-2.html" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-5 px-14 rounded-full text-xl transition">
+          Continue to Mission 2 →
         </a>
       </div>
     </div>
@@ -140,7 +140,6 @@
         return;
       }
 
-      // Partial matching for better student experience
       if (value && correctFlags[num] && value.includes(correctFlags[num])) {
         foundFlags.push(num);
         localStorage.setItem('recon1_foundFlags', JSON.stringify(foundFlags));
