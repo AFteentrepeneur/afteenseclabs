@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Recon Mission 2 – Subdomain Enumeration | AFTeen SecLabs</title>
+  <title>Recon Mission 2 – Subdomain Discovery | AFTeen SecLabs</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <style>
+    .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #10b981; color: white; padding: 12px 24px; border-radius: 8px; z-index: 1000; opacity: 0; transition: opacity 0.4s; pointer-events: none; }
+    .toast.show { opacity: 1; }
+  </style>
 </head>
 <body class="bg-gray-950 text-white min-h-screen p-6">
 
@@ -13,168 +17,197 @@
 
     <!-- Navigation -->
     <div class="flex flex-col sm:flex-row items-center justify-between mb-10 gap-4">
-      <a href="/labs/recon-mission-1.html" class="text-cyan-400 hover:text-cyan-300 flex items-center font-medium">
-        ← Back to Mission 1
-      </a>
-      <h1 class="text-3xl font-bold text-cyan-400">Recon Mission 2: Subdomain Discovery</h1>
-      <a href="/dashboard.html" class="text-gray-400 hover:text-gray-300 flex items-center font-medium">
-        Dashboard →
-      </a>
+      <a href="/labs/recon-mission-1.html" class="text-cyan-400 hover:text-cyan-300 flex items-center font-medium">← Mission 1</a>
+      <h1 class="text-3xl font-bold text-cyan-400">Mission 2: Subdomain Discovery</h1>
+      <a href="/labs/recon-mission-3.html" class="text-gray-400 hover:text-gray-300 flex items-center font-medium">Mission 3 →</a>
     </div>
 
-    <!-- Mission Briefing -->
-    <div class="bg-gradient-to-r from-cyan-900 to-blue-900 rounded-3xl p-10 mb-10 text-center">
-      <div class="inline-block bg-red-500/10 text-red-400 px-4 py-1 rounded-full text-sm mb-4">RED TEAM • MODULE 1</div>
-      <h2 class="text-4xl font-bold mb-4">Mission 2: Find Hidden Doors</h2>
-      <p class="text-xl text-gray-200 max-w-2xl mx-auto">
-        Using the intelligence you gathered in Mission 1, you now need to discover NovaMobile's hidden subdomains.<br>
-        These are often where the real vulnerabilities live.
+    <!-- Briefing -->
+    <div class="bg-gradient-to-br from-cyan-950 to-blue-950 rounded-3xl p-10 mb-10 border border-cyan-800/40">
+      <div class="inline-block bg-red-600/20 text-red-300 px-4 py-1 rounded-full text-sm mb-6">RED TEAM – MODULE 1 – PHASE 2</div>
+      <h2 class="text-4xl font-bold mb-6 text-cyan-300">Now find the hidden doors</h2>
+      <p class="text-lg text-gray-200 leading-relaxed mb-6">
+        NovaMobile has one main domain… but that's just the front door.<br>
+        Real vulnerabilities usually hide in forgotten subdomains.<br><br>
+        GhostJack is already looking. Beat them to it.
       </p>
     </div>
 
-    <!-- Objectives -->
-    <div class="grid md:grid-cols-3 gap-6 mb-12">
-      <div class="bg-gray-900 p-6 rounded-2xl border border-cyan-900/30">
-        <div class="text-cyan-400 text-3xl mb-4">🔎</div>
-        <h4 class="font-semibold">Subdomain Enumeration</h4>
-        <p class="text-gray-400 text-sm">Discover hidden services and entry points</p>
+    <!-- Progress + Reset -->
+    <div class="mb-10 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="w-full sm:w-auto flex-1">
+        <div class="flex justify-between text-sm mb-3">
+          <span class="text-gray-400">Progress</span>
+          <span id="progress-text" class="font-medium text-cyan-400">0/5 • 0 pts</span>
+        </div>
+        <div class="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
+          <div id="progress-bar" class="bg-gradient-to-r from-cyan-400 to-blue-500 h-3 rounded-full w-0 transition-all duration-500"></div>
+        </div>
       </div>
-      <div class="bg-gray-900 p-6 rounded-2xl border border-cyan-900/30">
-        <div class="text-cyan-400 text-3xl mb-4">🛠️</div>
-        <h4 class="font-semibold">Active Recon Basics</h4>
-        <p class="text-gray-400 text-sm">Use public tools safely</p>
+      <button onclick="resetProgress()" class="bg-red-700 hover:bg-red-800 px-6 py-3 rounded-lg text-sm font-medium transition">
+        Reset Mission
+      </button>
+    </div>
+
+    <!-- Tasks -->
+    <div class="space-y-10">
+      <div class="bg-gray-900 p-8 rounded-3xl border border-gray-700">
+        <h3 class="text-xl font-semibold mb-3 text-cyan-300">Task 1 – Confirm root domain again (baseline)</h3>
+        <p class="text-gray-400 mb-4 text-sm">Just to make sure we're on the same page.</p>
+        <input id="flag1" type="text" class="w-full p-5 bg-gray-800 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 text-white placeholder-gray-500" placeholder="novamobile.africa">
+        <div id="hint1" class="hidden mt-4 text-sm text-emerald-400"></div>
       </div>
-      <div class="bg-gray-900 p-6 rounded-2xl border border-cyan-900/30">
-        <div class="text-cyan-400 text-3xl mb-4">🎯</div>
-        <h4 class="font-semibold">Attack Surface Mapping</h4>
-        <p class="text-gray-400 text-sm">Identify the most vulnerable subdomains</p>
+
+      <div class="bg-gray-900 p-8 rounded-3xl border border-gray-700">
+        <h3 class="text-xl font-semibold mb-3 text-cyan-300">Task 2 – Find the development/testing subdomain</h3>
+        <p class="text-gray-400 mb-4 text-sm">Most companies have a "dev" or "staging" version that's less protected.</p>
+        <input id="flag2" type="text" class="w-full p-5 bg-gray-800 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 text-white placeholder-gray-500" placeholder="dev.novamobile.africa">
+        <div id="hint2" class="hidden mt-4 text-sm text-emerald-400"></div>
+      </div>
+
+      <div class="bg-gray-900 p-8 rounded-3xl border border-gray-700">
+        <h3 class="text-xl font-semibold mb-3 text-cyan-300">Task 3 – Find an admin or login portal subdomain</h3>
+        <p class="text-gray-400 mb-4 text-sm">Common names: admin, portal, login, dashboard...</p>
+        <input id="flag3" type="text" class="w-full p-5 bg-gray-800 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 text-white placeholder-gray-500" placeholder="admin.novamobile.africa">
+        <div id="hint3" class="hidden mt-4 text-sm text-emerald-400"></div>
+      </div>
+
+      <div class="bg-gray-900 p-8 rounded-3xl border border-gray-700">
+        <h3 class="text-xl font-semibold mb-3 text-cyan-300">Task 4 – Find an API subdomain</h3>
+        <p class="text-gray-400 mb-4 text-sm">Modern apps almost always have an API endpoint.</p>
+        <input id="flag4" type="text" class="w-full p-5 bg-gray-800 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 text-white placeholder-gray-500" placeholder="api.novamobile.africa">
+        <div id="hint4" class="hidden mt-4 text-sm text-emerald-400"></div>
+      </div>
+
+      <div class="bg-gray-900 p-8 rounded-3xl border border-gray-700">
+        <h3 class="text-xl font-semibold mb-3 text-cyan-300">Task 5 – Which subdomain is most likely vulnerable?</h3>
+        <p class="text-gray-400 mb-4 text-sm">Think: which one is probably forgotten or poorly secured?</p>
+        <input id="flag5" type="text" class="w-full p-5 bg-gray-800 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 text-white placeholder-gray-500" placeholder="dev.novamobile.africa">
+        <div id="hint5" class="hidden mt-4 text-sm text-emerald-400"></div>
       </div>
     </div>
 
-    <!-- Progress -->
-    <div class="mb-10">
-      <div class="flex justify-between text-sm mb-3">
-        <span class="text-gray-400">Mission Progress</span>
-        <span id="progress-text" class="font-medium text-cyan-400">0/5 flags • 0 points</span>
-      </div>
-      <div class="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
-        <div id="progress-bar" class="bg-gradient-to-r from-cyan-400 to-blue-500 h-3 rounded-full w-0 transition-all duration-500"></div>
-      </div>
-    </div>
-
-    <!-- Flag Inputs -->
-    <div class="space-y-8">
-      <div class="bg-gray-900 p-8 rounded-3xl border border-gray-700">
-        <label class="block text-lg font-medium mb-4">Flag 1: Main Company Domain</label>
-        <input id="flag1" type="text" class="w-full p-5 bg-gray-800 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 text-white placeholder-gray-500" placeholder="e.g. novamobile.africa">
-        <button onclick="checkFlag(1)" class="mt-6 w-full bg-cyan-600 hover:bg-cyan-700 py-4 rounded-2xl font-semibold text-lg transition">Submit Flag 1</button>
-      </div>
-
-      <div class="bg-gray-900 p-8 rounded-3xl border border-gray-700">
-        <label class="block text-lg font-medium mb-4">Flag 2: Development / Testing Subdomain</label>
-        <input id="flag2" type="text" class="w-full p-5 bg-gray-800 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 text-white placeholder-gray-500" placeholder="e.g. dev.novamobile.africa">
-        <button onclick="checkFlag(2)" class="mt-6 w-full bg-cyan-600 hover:bg-cyan-700 py-4 rounded-2xl font-semibold text-lg transition">Submit Flag 2</button>
-      </div>
-
-      <div class="bg-gray-900 p-8 rounded-3xl border border-gray-700">
-        <label class="block text-lg font-medium mb-4">Flag 3: Admin or Login Subdomain</label>
-        <input id="flag3" type="text" class="w-full p-5 bg-gray-800 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 text-white placeholder-gray-500" placeholder="e.g. admin.novamobile.africa">
-        <button onclick="checkFlag(3)" class="mt-6 w-full bg-cyan-600 hover:bg-cyan-700 py-4 rounded-2xl font-semibold text-lg transition">Submit Flag 3</button>
-      </div>
-
-      <div class="bg-gray-900 p-8 rounded-3xl border border-gray-700">
-        <label class="block text-lg font-medium mb-4">Flag 4: API or Backend Subdomain</label>
-        <input id="flag4" type="text" class="w-full p-5 bg-gray-800 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 text-white placeholder-gray-500" placeholder="e.g. api.novamobile.africa">
-        <button onclick="checkFlag(4)" class="mt-6 w-full bg-cyan-600 hover:bg-cyan-700 py-4 rounded-2xl font-semibold text-lg transition">Submit Flag 4</button>
-      </div>
-
-      <div class="bg-gray-900 p-8 rounded-3xl border border-gray-700">
-        <label class="block text-lg font-medium mb-4">Flag 5: Most Vulnerable Subdomain (Why?)</label>
-        <input id="flag5" type="text" class="w-full p-5 bg-gray-800 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 text-white placeholder-gray-500" placeholder="e.g. dev.novamobile.africa - outdated software">
-        <button onclick="checkFlag(5)" class="mt-6 w-full bg-cyan-600 hover:bg-cyan-700 py-4 rounded-2xl font-semibold text-lg transition">Submit Flag 5</button>
-      </div>
-    </div>
-
-    <!-- Success Screen -->
+    <!-- Success -->
     <div id="success-screen" class="hidden text-center mt-20">
-      <div class="text-8xl mb-8">🎉</div>
-      <h2 class="text-5xl font-bold text-cyan-400 mb-4">Excellent Work, Cadet!</h2>
-      <p class="text-2xl text-gray-300 mb-6">You have successfully discovered NovaMobile's hidden attack surface.</p>
+      <div class="text-8xl mb-8">🎯</div>
+      <h2 class="text-5xl font-bold text-cyan-400 mb-4">Attack Surface Mapped</h2>
+      <p class="text-2xl text-gray-300 mb-6">You now know where NovaMobile is most exposed.</p>
       <p id="points-earned" class="text-5xl font-bold text-cyan-400 mb-12">0 points earned</p>
 
       <div class="flex flex-col sm:flex-row gap-6 justify-center">
         <a href="/labs/recon-mission-1.html" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-5 px-14 rounded-full text-xl transition">
-          ← Previous Mission
+          ← Mission 1
         </a>
         <a href="/labs/recon-mission-3.html" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-5 px-14 rounded-full text-xl transition">
-          Continue to Mission 3 →
+          Mission 3 →
         </a>
       </div>
     </div>
 
+    <div id="toast" class="toast hidden">Mission reset!</div>
+
   </div>
 
   <script>
-    const correctFlags = {
-      1: "novamobile.africa",
-      2: "dev",
-      3: "admin",
-      4: "api",
-      5: "dev"   // Most vulnerable = dev subdomain
+    const missions = {
+      correctFlags: {
+        1: "novamobile.africa",
+        2: "dev",
+        3: "admin",
+        4: "api",
+        5: "dev"
+      },
+      hints: {
+        1: "Correct. Always confirm the root first.",
+        2: "Dev environments are often neglected — huge risk.",
+        3: "Admin portals = high-value if exposed.",
+        4: "APIs usually leak more than they should.",
+        5: "Exactly. Dev is almost always the weakest link."
+      }
     };
 
     let foundFlags = JSON.parse(localStorage.getItem('recon2_foundFlags')) || [];
     let points = foundFlags.length * 25;
 
-    window.onload = () => {
-      updateProgress();
-      if (foundFlags.length === 5) showSuccess();
-    };
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    const successScreen = document.getElementById('success-screen');
+    const toast = document.getElementById('toast');
+
+    function updateProgress() {
+      const progress = (foundFlags.length / 5) * 100;
+      progressBar.style.width = progress + '%';
+      progressText.textContent = `${foundFlags.length}/5 • ${points} pts`;
+    }
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.classList.add('hidden'), 400);
+      }, 2200);
+    }
 
     function checkFlag(num) {
       const input = document.getElementById(`flag${num}`);
       let value = input.value.trim().toLowerCase();
 
-      if (foundFlags.includes(num)) {
-        alert("✅ You have already submitted this flag!");
-        return;
-      }
+      if (foundFlags.includes(num)) return;
 
-      if (value && correctFlags[num] && value.includes(correctFlags[num])) {
+      if (value && missions.correctFlags[num] && value.includes(missions.correctFlags[num])) {
         foundFlags.push(num);
         localStorage.setItem('recon2_foundFlags', JSON.stringify(foundFlags));
         points += 25;
 
-        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
-        alert(`✅ Flag ${num} accepted! +25 points`);
+        const hintEl = document.getElementById(`hint${num}`);
+        hintEl.textContent = missions.hints[num];
+        hintEl.classList.remove('hidden');
+
+        confetti({ particleCount: 100, spread: 70 });
+        alert(`Correct! +25 pts\n${missions.hints[num]}`);
 
         updateProgress();
 
-        if (foundFlags.length === 5) {
-          showSuccess();
-        }
-      } else {
-        alert("❌ Not quite. Think about common subdomain names like dev, admin, api, staging, test...");
+        if (foundFlags.length === 5) showSuccess();
       }
     }
 
-    function updateProgress() {
-      const progress = (foundFlags.length / 5) * 100;
-      document.getElementById('progress-bar').style.width = progress + '%';
-      document.getElementById('progress-text').textContent = `${foundFlags.length}/5 flags • ${points} points`;
-    }
-
     function showSuccess() {
-      document.querySelector('.space-y-8').classList.add('hidden');
-      document.getElementById('success-screen').classList.remove('hidden');
+      document.querySelectorAll('.space-y-10').forEach(el => el.classList.add('hidden'));
+      successScreen.classList.remove('hidden');
       document.getElementById('points-earned').textContent = `${points} points earned`;
-
-      confetti({
-        particleCount: 300,
-        spread: 100,
-        origin: { y: 0.6 }
-      });
+      confetti({ particleCount: 280, spread: 100 });
     }
+
+    function resetProgress() {
+      if (!confirm("Reset this mission? All progress will be lost.")) return;
+
+      localStorage.removeItem('recon2_foundFlags');
+      foundFlags = [];
+      points = 0;
+
+      updateProgress();
+      document.querySelectorAll('input').forEach(i => i.value = '');
+      document.querySelectorAll('[id^="hint"]').forEach(h => {
+        h.textContent = '';
+        h.classList.add('hidden');
+      });
+
+      showToast("Mission reset — ready to go again.");
+    }
+
+    document.querySelectorAll('input').forEach(input => {
+      input.addEventListener('keypress', e => {
+        if (e.key === 'Enter') {
+          const num = input.id.replace('flag', '');
+          checkFlag(parseInt(num));
+        }
+      });
+    });
+
+    window.onload = updateProgress;
   </script>
 
 </body>
