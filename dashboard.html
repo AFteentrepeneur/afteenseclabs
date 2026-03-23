@@ -127,8 +127,15 @@
   </div>
 
   <script>
-    firebase.initializeApp(window.firebaseConfig);
-    const auth = firebase.auth();
+
+        document.getElementById('logout-btn')?.addEventListener('click', () => {
+      auth.signOut().then(() => {
+        window.location.href = '/login.html';
+      }).catch(err => console.error('Logout failed', err));
+    });
+    
+      firebase.initializeApp(window.firebaseConfig);
+      const auth = firebase.auth();
 
     auth.onAuthStateChanged((user) => {
       if (user) {
